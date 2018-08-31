@@ -14,7 +14,7 @@
 #import "MLSMEViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "MLSColor.h"
-//#import "YYFPSLabel.h"
+#import "YYFPSLabel.h"
 
 @interface MLSTabBarController ()
 
@@ -34,7 +34,21 @@
     
     [self addChildVC:[[MLSMEViewController alloc]init] title:@"我" image:@"nav_me_30x30_" selectedImage:@"nav_me_s_30x30_"];
     
+#if DEBUG
+    //显示当前帧率
+    [self setupFPSLabel];
+#endif
 }
+
+#pragma mark -    FPS Label 显示当前帧率
+- (void)setupFPSLabel{
+    YYFPSLabel *label = [[YYFPSLabel alloc] init];
+    label.frame = CGRectMake(10, kScreenHeight - 49 - 30 - 10, 60, 30);
+    [self.view addSubview:label];
+}
+
+
+
 
 #pragma mark - 添加控制器
 /**
@@ -69,6 +83,44 @@
     [self addChildViewController:navc];
     
 }
+
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+    NSInteger index = [self.tabBar.items indexOfObject:item];
+    [self playSound];//点击时音效
+    [self animationWithIndex:index];
+}
+
+-(void) playSound{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"like" ofType:@"caf"];
+    SystemSoundID soundID;
+    NSURL *soundURL = [NSURL fileURLWithPath:path];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL,&soundID);
+    AudioServicesPlaySystemSound(soundID);
+    
+}
+- (void)animationWithIndex:(NSInteger) index {
+    if (self.selectedIndex == index) {
+        return;
+    }
+    NSMutableArray * tabbarbuttonArray = [NSMutableArray array];
+    for (UIView *tabBarButton in self.tabBar.subviews) {
+        if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+            [tabbarbuttonArray addObject:tabBarButton];
+        }
+    }
+    CATransition* animation = [CATransition animation];
+    [animation setDuration:0.3f];
+    //动画切换风格
+    [animation setType:kCATransitionFade];
+    //animation.type = @"cube";
+    //动画切换方向
+    [animation setSubtype:kCATransitionFromBottom];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [[tabbarbuttonArray[index] layer]addAnimation:animation forKey:@"UITabBarButton.transform.scale"];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

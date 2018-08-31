@@ -40,6 +40,13 @@
 		8564029521393B47009F9D57 /* nav_cart_30x30_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8564028921393B46009F9D57 /* nav_cart_30x30_@3x.png */; };
 		8564029621393B47009F9D57 /* nav_cart_30x30_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8564028A21393B46009F9D57 /* nav_cart_30x30_@2x.png */; };
 		8564029721393B47009F9D57 /* nav_cat_30x30_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8564028B21393B47009F9D57 /* nav_cat_30x30_@3x.png */; };
+		8564029A213945EC009F9D57 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85640299213945EC009F9D57 /* YYFPSLabel.m */; };
+		8564029E21394836009F9D57 /* MLSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564029D21394836009F9D57 /* MLSLoginViewController.m */; };
+		856402A221394862009F9D57 /* MLSRegisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 856402A121394862009F9D57 /* MLSRegisViewController.m */; };
+		856402A5213948B0009F9D57 /* UIImageView+ImageViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 856402A4213948B0009F9D57 /* UIImageView+ImageViewTool.m */; };
+		856402A7213948D5009F9D57 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856402A6213948D5009F9D57 /* ImageIO.framework */; };
+		856402A9213949A1009F9D57 /* like.caf in Resources */ = {isa = PBXBuildFile; fileRef = 856402A8213949A0009F9D57 /* like.caf */; };
+		856402AD213963E8009F9D57 /* ZMNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 856402AC213963E8009F9D57 /* ZMNavView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +98,18 @@
 		8564028921393B46009F9D57 /* nav_cart_30x30_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_cart_30x30_@3x.png"; sourceTree = "<group>"; };
 		8564028A21393B46009F9D57 /* nav_cart_30x30_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_cart_30x30_@2x.png"; sourceTree = "<group>"; };
 		8564028B21393B47009F9D57 /* nav_cat_30x30_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_cat_30x30_@3x.png"; sourceTree = "<group>"; };
+		85640298213945EC009F9D57 /* YYFPSLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		85640299213945EC009F9D57 /* YYFPSLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		8564029C21394836009F9D57 /* MLSLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLSLoginViewController.h; sourceTree = "<group>"; };
+		8564029D21394836009F9D57 /* MLSLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLSLoginViewController.m; sourceTree = "<group>"; };
+		856402A021394862009F9D57 /* MLSRegisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLSRegisViewController.h; sourceTree = "<group>"; };
+		856402A121394862009F9D57 /* MLSRegisViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLSRegisViewController.m; sourceTree = "<group>"; };
+		856402A3213948B0009F9D57 /* UIImageView+ImageViewTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ImageViewTool.h"; sourceTree = "<group>"; };
+		856402A4213948B0009F9D57 /* UIImageView+ImageViewTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ImageViewTool.m"; sourceTree = "<group>"; };
+		856402A6213948D5009F9D57 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		856402A8213949A0009F9D57 /* like.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = like.caf; sourceTree = "<group>"; };
+		856402AB213963E8009F9D57 /* ZMNavView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMNavView.h; sourceTree = "<group>"; };
+		856402AC213963E8009F9D57 /* ZMNavView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMNavView.m; sourceTree = "<group>"; };
 		8C205711D4DD5120F4B6C02B /* libPods-BeautifulSaid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeautifulSaid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D31CEF2A75F53FB82C7423 /* Pods-BeautifulSaid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautifulSaid.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeautifulSaid/Pods-BeautifulSaid.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				856402A7213948D5009F9D57 /* ImageIO.framework in Frameworks */,
 				8564027121393527009F9D57 /* AudioToolbox.framework in Frameworks */,
 				63E7A0D46C1D5E84C253BD53 /* libPods-BeautifulSaid.a in Frameworks */,
 			);
@@ -111,6 +131,7 @@
 		25F52451689C09278F770E16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				856402A6213948D5009F9D57 /* ImageIO.framework */,
 				8564027021393527009F9D57 /* AudioToolbox.framework */,
 				8C205711D4DD5120F4B6C02B /* libPods-BeautifulSaid.a */,
 			);
@@ -185,11 +206,13 @@
 			children = (
 				8564026C213933B8009F9D57 /* Tabbar */,
 				8564026721393263009F9D57 /* Navigation */,
+				8564023921392072009F9D57 /* Base */,
+				8564023D213920B0009F9D57 /* Home */,
+				8564023E213920BE009F9D57 /* Categoty */,
 				8564025F21393246009F9D57 /* Shop */,
 				8564025B2139322A009F9D57 /* ME */,
-				8564023E213920BE009F9D57 /* Categoty */,
-				8564023D213920B0009F9D57 /* Home */,
-				8564023921392072009F9D57 /* Base */,
+				8564029F21394839009F9D57 /* Regis */,
+				8564029B21394823009F9D57 /* Login */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -231,6 +254,7 @@
 		8564023921392072009F9D57 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				856402AA213963D5009F9D57 /* View */,
 				8564023A213920A2009F9D57 /* MLSBaseViewController.h */,
 				8564023B213920A2009F9D57 /* MLSBaseViewController.m */,
 			);
@@ -276,8 +300,8 @@
 		8564026721393263009F9D57 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				8564026821393263009F9D57 /* MLSNavigationController.m */,
 				8564026921393263009F9D57 /* MLSNavigationController.h */,
+				8564026821393263009F9D57 /* MLSNavigationController.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -285,6 +309,7 @@
 		8564026B2139336D009F9D57 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				856402A8213949A0009F9D57 /* like.caf */,
 				8564027621393AF0009F9D57 /* Images */,
 			);
 			path = Resources;
@@ -304,6 +329,10 @@
 			children = (
 				8564027321393783009F9D57 /* MLSColor.h */,
 				8564027421393783009F9D57 /* MLSColor.m */,
+				85640298213945EC009F9D57 /* YYFPSLabel.h */,
+				85640299213945EC009F9D57 /* YYFPSLabel.m */,
+				856402A3213948B0009F9D57 /* UIImageView+ImageViewTool.h */,
+				856402A4213948B0009F9D57 /* UIImageView+ImageViewTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -337,6 +366,33 @@
 				8564027921393B0B009F9D57 /* nav_home_30x30_@3x.png */,
 			);
 			path = ItemIcon;
+			sourceTree = "<group>";
+		};
+		8564029B21394823009F9D57 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8564029C21394836009F9D57 /* MLSLoginViewController.h */,
+				8564029D21394836009F9D57 /* MLSLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8564029F21394839009F9D57 /* Regis */ = {
+			isa = PBXGroup;
+			children = (
+				856402A021394862009F9D57 /* MLSRegisViewController.h */,
+				856402A121394862009F9D57 /* MLSRegisViewController.m */,
+			);
+			path = Regis;
+			sourceTree = "<group>";
+		};
+		856402AA213963D5009F9D57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				856402AB213963E8009F9D57 /* ZMNavView.h */,
+				856402AC213963E8009F9D57 /* ZMNavView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A79131021D7E6D91698F9FBE /* Pods */ = {
@@ -420,6 +476,7 @@
 				8564028E21393B47009F9D57 /* nav_cart_s_30x30_@2x.png in Resources */,
 				8564028D21393B47009F9D57 /* nav_cat_s_30x30_@2x.png in Resources */,
 				8564022321391B7E009F9D57 /* LaunchScreen.storyboard in Resources */,
+				856402A9213949A1009F9D57 /* like.caf in Resources */,
 				8564027F21393B1F009F9D57 /* nav_home_s_30x30_@2x.png in Resources */,
 				8564029521393B47009F9D57 /* nav_cart_30x30_@3x.png in Resources */,
 				8564022021391B7E009F9D57 /* Assets.xcassets in Resources */,
@@ -482,12 +539,17 @@
 				8564026221393246009F9D57 /* MLSShopViewController.m in Sources */,
 				8564026A21393263009F9D57 /* MLSNavigationController.m in Sources */,
 				8564021B21391B7B009F9D57 /* ViewController.m in Sources */,
+				8564029E21394836009F9D57 /* MLSLoginViewController.m in Sources */,
+				856402A221394862009F9D57 /* MLSRegisViewController.m in Sources */,
 				8564022621391B7E009F9D57 /* main.m in Sources */,
 				8564025A21393220009F9D57 /* MLSHomeViewController.m in Sources */,
+				856402A5213948B0009F9D57 /* UIImageView+ImageViewTool.m in Sources */,
 				856402382139205C009F9D57 /* AppDelegate+Utils.m in Sources */,
 				8564025E2139322A009F9D57 /* MLSMEViewController.m in Sources */,
+				8564029A213945EC009F9D57 /* YYFPSLabel.m in Sources */,
 				8564025721393218009F9D57 /* MLSCateViewController.m in Sources */,
 				8564021821391B7B009F9D57 /* AppDelegate.m in Sources */,
+				856402AD213963E8009F9D57 /* ZMNavView.m in Sources */,
 				8564026F213933C8009F9D57 /* MLSTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +694,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83MLD9ZCC3;
+				GCC_PREFIX_HEADER = "/Users/power/Desktop/BeautifulSaid/BeautifulSaid/BeautifulSaid/Class/Macros(宏)/MLSHeaderPrefix.pch";
 				INFOPLIST_FILE = BeautifulSaid/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -652,6 +715,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83MLD9ZCC3;
+				GCC_PREFIX_HEADER = "/Users/power/Desktop/BeautifulSaid/BeautifulSaid/BeautifulSaid/Class/Macros(宏)/MLSHeaderPrefix.pch";
 				INFOPLIST_FILE = BeautifulSaid/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

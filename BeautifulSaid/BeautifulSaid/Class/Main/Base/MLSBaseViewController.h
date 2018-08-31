@@ -10,4 +10,8 @@
 
 @interface MLSBaseViewController : UIViewController
 
+@property (nonatomic, strong) ZMNavView       *navView;
+
+- (void)setupNavView;
+
 @end

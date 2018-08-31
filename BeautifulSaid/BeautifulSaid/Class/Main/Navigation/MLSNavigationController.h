@@ -10,4 +10,10 @@
 
 @interface MLSNavigationController : UINavigationController
 
+@property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
+
+- (void)showNavBottomLine;
+- (void)hideNavBottomLine;
+
+
 @end

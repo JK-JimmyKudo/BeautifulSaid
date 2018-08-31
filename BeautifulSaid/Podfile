@@ -19,6 +19,9 @@ pod 'MJRefresh'
 pod 'IQKeyboardManager'
 pod 'MBProgressHUD'
 pod 'AsyncDisplayKit'
+pod 'Masonry'
+pod 'pop'
+pod 'UITableView+FDTemplateLayoutCell_Bell'
 
 
 end
