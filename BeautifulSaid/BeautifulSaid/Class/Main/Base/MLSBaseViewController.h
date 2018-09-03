@@ -12,6 +12,11 @@
 
 @property (nonatomic, strong) ZMNavView       *navView;
 
+@property (nonatomic,strong) MLSearchView *searchView;
+
 - (void)setupNavView;
+
+- (void)setupSeachView;
+
 
 @end

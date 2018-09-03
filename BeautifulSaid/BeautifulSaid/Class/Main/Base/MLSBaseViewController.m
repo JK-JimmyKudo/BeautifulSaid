@@ -10,9 +10,14 @@
 #import "MLSHeaderPrefix.pch"
 @interface MLSBaseViewController ()
 
+
+
+
 @end
 
 @implementation MLSBaseViewController
+
+
 
 -(ZMNavView *)navView{
     if (!_navView) {
@@ -27,6 +32,23 @@
         [self.navView.superview layoutIfNeeded];
     }
     return _navView;
+}
+
+
+-(MLSearchView *)searchView{
+    
+    if (!_searchView) {
+        MLSearchView *searchView = [[MLSearchView alloc] init];
+//        searchView.backgroundColor = [UIColor orangeColor];
+        [self.view addSubview:searchView];
+        self.searchView = searchView;
+        [self.searchView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.mas_equalTo(0);
+            make.height.mas_equalTo(64 + KStatusBarHeight);
+        }];
+        [self.searchView.superview layoutIfNeeded];
+    }
+    return _searchView;
 }
 
 - (void)viewDidLoad {
@@ -45,6 +67,12 @@
 #pragma mark - 加载自定义导航
 - (void)setupNavView{
     [self navView];
+}
+
+#pragma mark - 加载搜索框
+
+-(void)setupSeachView{
+    [self searchView];
 }
 
 #pragma mark - 接收到系统的内存警告时

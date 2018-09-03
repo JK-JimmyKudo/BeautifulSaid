@@ -11,6 +11,12 @@
 
 #import "ZMNavView.h"
 #import "MLSColor.h"
+#import "MLSearchView.h"
+#import "YYTableView.h"
+#import "YYTableViewCell.h"
+#import "ZMNetworkHelper.h"
+#import "YYCollectionView.h"
+#import "YYCollectionViewcell.h"
 
 
 #import <YYKit/YYKit.h>
@@ -37,8 +43,8 @@
 #define NSLog(FORMAT, ...) nil
 #endif
 
-#define FIT_WIDTH   [UIScreen mainScreen].bounds.size.width/375
-#define FIT_HEIGHT  [UIScreen mainScreen].bounds.size.height/667
+#define FIT_WIDTH   [UIScreen mainScreen].bounds.size.width
+#define FIT_HEIGHT  [UIScreen mainScreen].bounds.size.height
 #define placeholderFailImage [YYImage imageWithColor:[ZMColor colorWithHexString:@"#ECECEC"]]
 //default_avatar
 #define placeholderAvatarImage [UIImage imageNamed:@"default_avatar"]
