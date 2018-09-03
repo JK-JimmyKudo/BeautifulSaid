@@ -48,7 +48,7 @@
 #define placeholderFailImage [YYImage imageWithColor:[ZMColor colorWithHexString:@"#ECECEC"]]
 //default_avatar
 #define placeholderAvatarImage [UIImage imageNamed:@"default_avatar"]
-#define backArrowIcon          [UIImage imageNamed:@"navigation_back"]
+#define backArrowIcon          [UIImage imageNamed:@"global_back_10x25_"]
 #define backArrowWhiteIcon     [UIImage imageNamed:@"navigation_back_white"]
 
 #define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)

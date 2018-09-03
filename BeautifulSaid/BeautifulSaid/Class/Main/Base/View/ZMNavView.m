@@ -10,7 +10,7 @@
 
 @interface ZMNavView ()
 
-@property (nonatomic, strong) UILabel *lineLabel;
+
 
 @end
 

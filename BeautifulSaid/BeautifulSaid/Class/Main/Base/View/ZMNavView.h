@@ -17,11 +17,12 @@
 @property (nonatomic, strong) UIButton  *centerButton;
 @property (nonatomic, strong) UILabel   *rightLabel;
 @property (nonatomic, assign) BOOL      showBottomLabel;
+@property (nonatomic, strong) UILabel *lineLabel;
 /** 中间按钮文字 */
 @property (nonatomic, strong) YYLabel  *centerLabel;
 
-@property (nonatomic, copy) void (^ leftButtonBlock)();
-@property (nonatomic, copy) void (^ cenTerButtonBlock)();
-@property (nonatomic, copy) void (^ rightButtonBlock)();
+@property (nonatomic, copy) void (^ leftButtonBlock)(void);
+@property (nonatomic, copy) void (^ cenTerButtonBlock)(void);
+@property (nonatomic, copy) void (^ rightButtonBlock)(void);
 
 @end

@@ -10,6 +10,8 @@
 #import "HomeTableViewCell.h"
 #import "HomeCollectionViewCell.h"
 #import "HomeModels.h"
+#import "MLSLoginViewController.h"
+#import <UIView+YYAdd.h>
 
 @interface MLSHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -144,6 +146,14 @@ static NSString *inderfier = @"HomeCollectionViewCell";
 //- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
 //
 //}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    MLSLoginViewController *vc = [[MLSLoginViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+
+//    [self.navigationController presentViewController:vc animated:YES completion:nil];
+}
 
 
 -(NSMutableArray *) m_rowsArray{

@@ -66,6 +66,8 @@
 		853CEDC1213D3D3E004A26E4 /* MGJDETAIL_comment_star_14x13_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853CEDBB213D3D3C004A26E4 /* MGJDETAIL_comment_star_14x13_@3x.png */; };
 		853CEDC2213D3D3E004A26E4 /* MGJDETAIL_comment_star_half_14x13_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853CEDBC213D3D3D004A26E4 /* MGJDETAIL_comment_star_half_14x13_@2x.png */; };
 		853CEDC3213D3D3E004A26E4 /* MGJDETAIL_comment_star_14x13_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853CEDBD213D3D3D004A26E4 /* MGJDETAIL_comment_star_14x13_@2x.png */; };
+		853CEDC6213D4C05004A26E4 /* login_navbar_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853CEDC4213D4C03004A26E4 /* login_navbar_more@2x.png */; };
+		853CEDC7213D4C05004A26E4 /* login_navbar_more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853CEDC5213D4C04004A26E4 /* login_navbar_more@3x.png */; };
 		8564021821391B7B009F9D57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564021721391B7B009F9D57 /* AppDelegate.m */; };
 		8564021B21391B7B009F9D57 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564021A21391B7B009F9D57 /* ViewController.m */; };
 		8564021E21391B7B009F9D57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8564021C21391B7B009F9D57 /* Main.storyboard */; };
@@ -176,6 +178,8 @@
 		853CEDBB213D3D3C004A26E4 /* MGJDETAIL_comment_star_14x13_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGJDETAIL_comment_star_14x13_@3x.png"; sourceTree = "<group>"; };
 		853CEDBC213D3D3D004A26E4 /* MGJDETAIL_comment_star_half_14x13_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGJDETAIL_comment_star_half_14x13_@2x.png"; sourceTree = "<group>"; };
 		853CEDBD213D3D3D004A26E4 /* MGJDETAIL_comment_star_14x13_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MGJDETAIL_comment_star_14x13_@2x.png"; sourceTree = "<group>"; };
+		853CEDC4213D4C03004A26E4 /* login_navbar_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_navbar_more@2x.png"; sourceTree = "<group>"; };
+		853CEDC5213D4C04004A26E4 /* login_navbar_more@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_navbar_more@3x.png"; sourceTree = "<group>"; };
 		8564021321391B7B009F9D57 /* BeautifulSaid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautifulSaid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8564021621391B7B009F9D57 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8564021721391B7B009F9D57 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -265,6 +269,8 @@
 		853CED43213CFEC6004A26E4 /* HomeImages */ = {
 			isa = PBXGroup;
 			children = (
+				853CEDC4213D4C03004A26E4 /* login_navbar_more@2x.png */,
+				853CEDC5213D4C04004A26E4 /* login_navbar_more@3x.png */,
 				853CEDBD213D3D3D004A26E4 /* MGJDETAIL_comment_star_14x13_@2x.png */,
 				853CEDBB213D3D3C004A26E4 /* MGJDETAIL_comment_star_14x13_@3x.png */,
 				853CEDB9213D3D3B004A26E4 /* MGJDETAIL_comment_star_dark_14x13_@2x.png */,
@@ -734,12 +740,14 @@
 				853CED50213D0095004A26E4 /* global_back_10x25_@3x.png in Resources */,
 				8564028D21393B47009F9D57 /* nav_cat_s_30x30_@2x.png in Resources */,
 				853CEDB3213D3BE7004A26E4 /* page_loading_00002.png in Resources */,
+				853CEDC7213D4C05004A26E4 /* login_navbar_more@3x.png in Resources */,
 				853CED9C213D3BE7004A26E4 /* page_loading_00034.png in Resources */,
 				853CED9B213D3BE7004A26E4 /* page_loading_00031.png in Resources */,
 				853CEDBF213D3D3E004A26E4 /* MGJDETAIL_comment_star_dark_14x13_@2x.png in Resources */,
 				8564022321391B7E009F9D57 /* LaunchScreen.storyboard in Resources */,
 				856402A9213949A1009F9D57 /* like.caf in Resources */,
 				853CEDC3213D3D3E004A26E4 /* MGJDETAIL_comment_star_14x13_@2x.png in Resources */,
+				853CEDC6213D4C05004A26E4 /* login_navbar_more@2x.png in Resources */,
 				853CEDA0213D3BE7004A26E4 /* page_loading_00009.png in Resources */,
 				853CED98213D3BE7004A26E4 /* page_loading_00022.png in Resources */,
 				853CEDB7213D3BE7004A26E4 /* page_loading_00008.png in Resources */,
