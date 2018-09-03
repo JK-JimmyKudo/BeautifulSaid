@@ -44,8 +44,6 @@ static NSString *inderfier = @"HomeCollectionViewCell";
 - (void)setupMainView{
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//    flowLayout.minimumLineSpacing = 0;
-//    flowLayout.minimumInteritemSpacing = 0;
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     flowLayout.itemSize = CGSizeMake((FIT_WIDTH - 30)/2, FIT_WIDTH *9/16 + 110);
 
@@ -56,6 +54,7 @@ static NSString *inderfier = @"HomeCollectionViewCell";
     
     [self.view addSubview:self.m_collectionView];
     [self.m_collectionView registerClass:[HomeCollectionViewCell class] forCellWithReuseIdentifier:inderfier];
+    
     
     
     
@@ -89,18 +88,63 @@ static NSString *inderfier = @"HomeCollectionViewCell";
     [self getRecommendData];
 }
 
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+//
+//    return 5;
+//}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.m_rowsArray.count;
+    
+//    if (section == 0) {
+//        return 1;
+//    }else if (section == 1){
+//        return 1;
+//    }else if (section == 2){
+//        return 1;
+//    }else if (section == 3){
+//        return 1;
+//    }else if (section == 4){
+//        return 1;
+//    }else{
+        return self.m_rowsArray.count;
+//    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+//
+//    if (indexPath.section == 0 && indexPath.item == 0) {
+//
+//        HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
+//        return cell;
+//
+//    }else if (indexPath.section == 1 && indexPath.item == 0){
+//         HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
+//        return cell;
+//
+//    }else if (indexPath.section == 2 && indexPath.item == 0){
+//         HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
+//        return cell;
+//
+//    }else if (indexPath.section == 3 && indexPath.item == 0){
+//         HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
+//        return cell;
+//
+//    }else if (indexPath.section == 4 && indexPath.item == 0){
+//        HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
+//        return cell;
+//    }else{
+        HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
+        [cell configHomeCollectionModel:self.m_rowsArray[indexPath.item]];
     
-    HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
-    
-    [cell configHomeCollectionModel:self.m_rowsArray[indexPath.item]];
-    
-    return cell;
+        return cell;
+//    }
 }
+
+
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+//
+//}
+
 
 -(NSMutableArray *) m_rowsArray{
     
