@@ -7,8 +7,11 @@
 //
 
 #import "MLSLoginViewController.h"
+#import "YCMenuView.h"
 
 @interface MLSLoginViewController ()
+
+@property(nonatomic,strong)NSArray      *arr;
 
 @end
 
@@ -18,7 +21,22 @@
     [super viewDidLoad];
 
     [self setupNavView];
+    [self setupYCMenuView];
 }
+
+-(void) setupYCMenuView{
+    UIImage *image = [UIImage imageNamed:@"ic_filter_category_0"];
+
+    YCMenuAction *action = [YCMenuAction actionWithTitle:@"忘记密码" image:image handler:^(YCMenuAction *action) {
+        NSLog(@"点击了%@",action.title);
+    }];
+    YCMenuAction *action1 = [YCMenuAction actionWithTitle:@"帮助支持" image:image handler:^(YCMenuAction *action) {
+        NSLog(@"点击了%@",action.title);
+    }];
+    
+    self.arr = @[action,action1];
+}
+
 
 - (void)setupNavView{
     [super setupNavView];
@@ -29,30 +47,28 @@
 
     WEAKSELF;
     self.navView.leftButtonBlock = ^{
-//        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
         
         NSLog(@"======");
     };
     
-    self.navView.rightButtonBlock = ^{
-        NSLog(@"点击右边的按钮");
+    self.navView.rightButtonBlock = ^(UIButton *rightButton) {
+
+        YCMenuView *view = [YCMenuView menuWithActions:weakSelf.arr width:140 relyonView:rightButton];
+        view.backgroundColor = [UIColor grayColor];
+        view.textColor = [UIColor whiteColor];
+        [view show];
     };
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

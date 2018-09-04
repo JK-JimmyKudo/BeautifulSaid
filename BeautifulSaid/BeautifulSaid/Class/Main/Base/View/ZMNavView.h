@@ -23,6 +23,6 @@
 
 @property (nonatomic, copy) void (^ leftButtonBlock)(void);
 @property (nonatomic, copy) void (^ cenTerButtonBlock)(void);
-@property (nonatomic, copy) void (^ rightButtonBlock)(void);
+@property (nonatomic, copy) void (^ rightButtonBlock)(UIButton *rightButton);
 
 @end

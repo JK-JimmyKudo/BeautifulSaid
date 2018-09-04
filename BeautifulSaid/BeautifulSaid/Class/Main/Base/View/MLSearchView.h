@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+
+@class MLSearchView;
+@protocol MLSearchViewDelegate <NSObject>
+
+- (void)dismissButtonWasPressedForSearchDetailView:(MLSearchView *)searchView;
+
+- (void)searchButtonWasPressedForSearchDetailView:(MLSearchView *)searchView;
+
+- (void)textFieldEditingChangedForSearchDetailView:(MLSearchView *)searchView;
+
+@end
+
 @interface MLSearchView : UIView
 
 @property (nonatomic,strong) UITextField *searchText;
@@ -15,5 +27,8 @@
 @property (nonatomic,strong) UIButton *canBtn;
 
 @property (nonatomic,strong) UIButton *SweepBtn;
+
+@property (weak, nonatomic) id<MLSearchViewDelegate> delegate;
+
 
 @end

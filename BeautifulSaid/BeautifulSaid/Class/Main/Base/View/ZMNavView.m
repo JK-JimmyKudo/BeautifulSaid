@@ -143,7 +143,7 @@
 
 - (void)clickRightButton{
     if (self.rightButtonBlock) {
-        self.rightButtonBlock();
+        self.rightButtonBlock(self.rightButton);
     }
 }
 

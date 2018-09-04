@@ -11,7 +11,8 @@
 #import "HomeCollectionViewCell.h"
 #import "HomeModels.h"
 #import "MLSLoginViewController.h"
-#import <UIView+YYAdd.h>
+#import "HomePopularCell.h"
+#import "HomeHeadView.h"
 
 @interface MLSHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -25,12 +26,17 @@
 
 static NSString *inderfier = @"HomeCollectionViewCell";
 
+static NSString *PopularInderfier = @"HomePopularCell";
+
+static NSString *HeadInderfier = @"HomeHeadView";
+
 @implementation MLSHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupMainView];
-    [self setupSeachView];
+    [self setupSeachView];    
+    [self.searchView.canBtn setImage:[UIImage imageNamed:@"global_nav_msg_white_20x18_"] forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -49,13 +55,17 @@ static NSString *inderfier = @"HomeCollectionViewCell";
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     flowLayout.itemSize = CGSizeMake((FIT_WIDTH - 30)/2, FIT_WIDTH *9/16 + 110);
 
-    self.m_collectionView = [[YYCollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+    self.m_collectionView = [[YYCollectionView alloc] initWithFrame:CGRectMake(0, -20, FIT_WIDTH, FIT_HEIGHT-20) collectionViewLayout:flowLayout];
     self.m_collectionView.backgroundColor = [UIColor blueColor];
     self.m_collectionView.delegate = self;
     self.m_collectionView.dataSource = self;
     
     [self.view addSubview:self.m_collectionView];
     [self.m_collectionView registerClass:[HomeCollectionViewCell class] forCellWithReuseIdentifier:inderfier];
+    
+    [self.m_collectionView registerClass:[HomePopularCell class] forCellWithReuseIdentifier:PopularInderfier];
+    
+    [self.m_collectionView registerClass:[HomeHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HeadInderfier];
     
     
     
@@ -90,71 +100,104 @@ static NSString *inderfier = @"HomeCollectionViewCell";
     [self getRecommendData];
 }
 
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-//
-//    return 5;
-//}
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+
+    return 2;
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-//    if (section == 0) {
-//        return 1;
-//    }else if (section == 1){
-//        return 1;
-//    }else if (section == 2){
-//        return 1;
-//    }else if (section == 3){
-//        return 1;
-//    }else if (section == 4){
-//        return 1;
-//    }else{
+    if (section == 0) {
+        return 1;
+    }else{
         return self.m_rowsArray.count;
-//    }
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-//
-//    if (indexPath.section == 0 && indexPath.item == 0) {
-//
-//        HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
-//        return cell;
-//
-//    }else if (indexPath.section == 1 && indexPath.item == 0){
-//         HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
-//        return cell;
-//
-//    }else if (indexPath.section == 2 && indexPath.item == 0){
-//         HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
-//        return cell;
-//
-//    }else if (indexPath.section == 3 && indexPath.item == 0){
-//         HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
-//        return cell;
-//
-//    }else if (indexPath.section == 4 && indexPath.item == 0){
-//        HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
-//        return cell;
-//    }else{
+    if (indexPath.section == 0 && indexPath.item == 0) {
+        HomePopularCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PopularInderfier forIndexPath:indexPath];
+        return cell;
+    }else{
         HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:inderfier forIndexPath:indexPath];
         [cell configHomeCollectionModel:self.m_rowsArray[indexPath.item]];
-    
         return cell;
-//    }
+    }
 }
 
 
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-//
+//设置每个item的尺寸
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 && indexPath.item == 0) {
+        return CGSizeMake(FIT_WIDTH, 130);
+    }
+    return CGSizeMake((FIT_WIDTH - 30)/2, FIT_WIDTH *9/16 + 110);
+}
+
+
+//footer的size
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+//{
+//    return CGSizeMake(10, 10);
 //}
+
+//header的size
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    if (section == 1) {
+        return CGSizeMake(0, 0);
+    }
+    return CGSizeMake(FIT_WIDTH, FIT_WIDTH *9/16 + FIT_WIDTH *9/16 + 40 + 150 + 10);
+}
+
+
+////设置每个item的UIEdgeInsets
+//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+//{
+//    return UIEdgeInsetsMake(10, 10, 10, 10);
+//}
+
+
+//设置每个item水平间距
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 10;
+}
+
+
+//设置每个item垂直间距
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+//{
+//    return 15;
+//}
+
+
+//通过设置SupplementaryViewOfKind 来设置头部或者底部的view，其中 ReuseIdentifier 的值必须和 注册是填写的一致，本例都为 “reusableView”
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    HomeHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HeadInderfier forIndexPath:indexPath];
+    
+    return headerView;
+}
+
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     MLSLoginViewController *vc = [[MLSLoginViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-
-//    [self.navigationController presentViewController:vc animated:YES completion:nil];
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    CGFloat minAlphaOffset = 0;//- 64;
+    CGFloat maxAlphaOffset = 200;
+    CGFloat offset = scrollView.contentOffset.y;
+    CGFloat alpha = (offset - minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
+    self.searchView.backgroundColor = [[UIColor whiteColor]colorWithAlphaComponent:alpha];;
+}
 
 -(NSMutableArray *) m_rowsArray{
     
@@ -183,54 +226,9 @@ static NSString *inderfier = @"HomeCollectionViewCell";
      }
      */
     
-    /*
-     "data": {
-     "list": [{
-     "image": "https://s10.mogucdn.com/mlcdn/c45406/180903_6bjfj78834g4hi00ikdi34l023304_750x390.jpg",
-     "width923": 750,
-     "height923": 390,
-     "link": "https://act.mogujie.com/nvzhuang000011?acm=3.mce.2_10_1j840.43542..bUVZQr2znWpzx.pos_0-m_448460-sd_119",
-     "width": 750,
-     "acm": "3.mce.2_10_1j840.43542..bUVZQr2znWpzx.pos_0-m_448460-sd_119",
-     "title": "女装大焕新",
-     "image923": "https://s10.mogucdn.com/mlcdn/c45406/180903_1bf7f7l27kb36c396ff3h1f3llcjh_750x390.jpg",
-     "height": 390
-     }, {
-     "image": "https://s10.mogucdn.com/mlcdn/c45406/180830_02el023idhd7c4elicj0i9efd754a_750x390.jpg",
-     "width923": 750,
-     "height923": 390,
-     "link": "https://act.mogujie.com/qushi00001?acm=3.mce.2_10_1j6q6.43542..bUVZQr2znWpzy.pos_1-m_447563-sd_119",
-     "width": 750,
-     "acm": "3.mce.2_10_1j6q6.43542..bUVZQr2znWpzy.pos_1-m_447563-sd_119",
-     "title": "流行趋向指南",
-     "image923": "https://s10.mogucdn.com/mlcdn/c45406/180830_479h565l9ahc4jcic5e4f6gg09dik_750x390.jpg",
-     "height": 390
-     }],
-     "isEnd": false,
-     "nextPage": 2,
-     "context": {
-     "currentTime": 1535961504
-     }
-     }
-     */
+
     
-    /*
-     "1_5_entry10": {
-     "list": [{
-     "image": "https://s10.mogucdn.com/mlcdn/c45406/180808_4a0jhc78504j0a2ale719kbbf9g19_750x420.jpg",
-     "link": "https://act.mogujie.com/dajia01?acm=3.mce.2_10_1hyrg.45375..ubj8Qr2zgjJxl.pos_0-m_419074-sd_119",
-     "width": 750,
-     "acm": "3.mce.2_10_1hyrg.45375..ubj8Qr2zgjJxl.pos_0-m_419074-sd_119",
-     "title": "限时特卖",
-     "height": 420
-     }],
-     "isEnd": true,
-     "nextPage": 1,
-     "context": {
-     "currentTime": 1535959687
-     }
-     }
-     */
+  
     
     NSString *urlStr = @"http://simba-api.meilishuo.com/mlselection/top/v1/topGoodsList/ios?_ab=3400&_app=mls&_at=e4197c2fae334463&_atype=iphone&_av=940&_channel=NILAppStore&_did=24B25A27-8C3D-4CA7-8BC5-A49766AD513F&_fs=NILAppStore940&_isRoot=0&_lang=zh_CN&_network=-1&_saveMode=1&_sdklevel=10.3.1&_swidth=1242&_t=1535959687&_version=9.4.0.3400&minfo=iPhone9%2C2&tid-fpid=RQ0qlhTONdQdtabXlTrdov&tid-token=zzwnUjxmRSOqV2DUj15I3g&limit=50&offset=0&type=sytq";
     

@@ -8,6 +8,11 @@
 
 #import "MLSearchView.h"
 
+@interface MLSearchView ()<UITextFieldDelegate>
+
+
+@end
+
 @implementation MLSearchView
 
 
@@ -26,19 +31,21 @@
 - (void)setupViews {
     
     self.searchText = [[UITextField alloc] init];
+    self.searchText.backgroundColor = [UIColor orangeColor];
     [self addSubview:self.searchText];
     self.searchText.layer.cornerRadius = 5.0f;
     self.searchText.layer.masksToBounds = YES;
-    self.searchText.text = @"测试";
+    self.searchText.placeholder = @"测试";
     self.searchText.font = [UIFont systemFontOfSize:13];
-    //    self.searchText.delegate = self;
+    self.searchText.delegate = self;
     [self setupTextFieldLeftView];
     [self.searchText setValue:[UIColor colorWithRed:176 / 255.0f green:176 / 255.0f blue: 176 / 255.0f alpha:1.0f]
                    forKeyPath:@"_placeholderLabel.textColor"];
     self.searchText.tintColor = [UIColor colorWithRed:98 / 255.0f green:97 / 255.0f blue: 101 / 255.0f alpha:1.0f];
-    
     self.searchText.backgroundColor = [UIColor colorWithRed:176 / 255.0f green:176 / 255.0f blue: 176 / 255.0f alpha:1.0f];
-    
+
+    [self.searchText addTarget:self action:@selector(textFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
+
 
     
     
@@ -50,10 +57,9 @@
     
     self.canBtn = [[UIButton alloc] init];
     [self addSubview:self.canBtn];
-    [self.canBtn setTitle:@"取消" forState: UIControlStateNormal];
     self.canBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-//    [self.canBtn setImage:[UIImage imageNamed:@"global_nav_msg_white_20x18_"] forState:UIControlStateNormal];
     self.canBtn.backgroundColor = [UIColor redColor];
+    [self.canBtn addTarget:self action:@selector(dismissButtonWasPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.canBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.searchText.mas_centerY);
         make.right.mas_equalTo(-20);
@@ -85,4 +91,41 @@
     self.searchText.leftView = searchImageView;
     self.searchText.leftViewMode = UITextFieldViewModeAlways;
 }
+
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.searchText resignFirstResponder];
+//    if ([self.delegate respondsToSelector:@selector(searchButtonWasPressedForSearchDetailView:)]) {
+//        [self.delegate searchButtonWasPressedForSearchDetailView:self];
+//    }
+    return YES;
+}
+
+- (void)textFieldEditingChanged:(UITextField *)sender {
+//    if ([self.delegate respondsToSelector:@selector(textFieldEditingChangedForSearchDetailView:)]) {
+//        [self.delegate textFieldEditingChangedForSearchDetailView:self];
+//    }
+//
+    if (sender.text.length <= 0) {
+        self.SweepBtn.hidden = NO;
+        
+    }else{
+        self.SweepBtn.hidden = YES;
+    }
+}
+
+
+#pragma mark - Handlers
+
+- (void)dismissButtonWasPressed:(UIButton *)sender {
+    [self.searchText resignFirstResponder];
+//    if ([self.delegate respondsToSelector:@selector(dismissButtonWasPressedForSearchDetailView:)]) {
+//        [self.delegate dismissButtonWasPressedForSearchDetailView:self];
+//    }
+    
+    
+}
+
 @end
