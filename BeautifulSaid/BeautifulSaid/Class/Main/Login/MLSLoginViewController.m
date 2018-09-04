@@ -8,6 +8,10 @@
 
 #import "MLSLoginViewController.h"
 #import "YCMenuView.h"
+#import "hhhViewController.h"
+
+#define kMyNavi  (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController
+
 
 @interface MLSLoginViewController ()
 
