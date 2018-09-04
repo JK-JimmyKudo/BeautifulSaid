@@ -176,7 +176,7 @@
         };
     }
     
-    [views mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:20 leadSpacing:20 tailSpacing:20];
+    [views mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:40 tailSpacing:40];
     [views mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.loginLabel.mas_bottom).offset(5);
         make.height.mas_equalTo(45);
@@ -187,6 +187,29 @@
 
 -(void)setupThredLoginUI{
     
+    
+    NSArray *arrs = @[@"login_qq_icon",@"login_wechat_icon",@"login_sina_icon"];
+    NSMutableArray *views = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i<arrs.count; i++) {
+        UIButton *loginBtn = [[UIButton alloc] init];
+//        loginBtn.backgroundColor = LRRandomColor;
+        [loginBtn setImage:[UIImage imageNamed:arrs[i]] forState:UIControlStateNormal];
+        loginBtn.adjustsImageWhenHighlighted = NO;
+        loginBtn.tag = i;
+        [self.view addSubview:loginBtn];
+        [views addObject:loginBtn];
+        [loginBtn addTarget:self action:@selector(loginClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    
+    CGFloat width = 50;
+    CGFloat margin = ((SCREEN_WIDTH - 3*width - 2*50)/2);
+    [views mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:margin leadSpacing:50 tailSpacing:40];
+    [views mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-20);
+        make.height.with.mas_equalTo(width);
+    }];
 }
 
 -(void) setupYCMenuView{
@@ -227,6 +250,11 @@
     };
 }
 
+-(void)loginClick:(UIButton *)login{
+    
+    NSLog(@"login.tag == %ld",(long)login.tag);
+    
+}
 
 -(void)getRecommendData{
     
