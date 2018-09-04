@@ -143,6 +143,7 @@
      };
     
     UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.userInteractionEnabled = YES;
     [imageView sd_setImageWithURL:[NSURL URLWithString:dict[@"image"]] placeholderImage:nil];
     [self addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -152,10 +153,18 @@
         make.height.mas_equalTo(FIT_WIDTH *9/16);
     }];
 
+    UITapGestureRecognizer *tag = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushWebView)];
+    [imageView addGestureRecognizer:tag];
+
     
-    
-    
-    
+}
+
+-(void)pushWebView{
+    TGWebViewController *web = [[TGWebViewController alloc] init];
+    web.url = @"https://act.mogujie.com/dajia01?acm=3.mce.2_10_1hyrg.45375..ubj8Qr2zgjJxl.pos_0-m_419074-sd_119";
+    web.webTitle = @"web";
+    web.progressColor = [UIColor blueColor];
+    [self.viewController.navigationController pushViewController:web animated:YES];
 }
 
 #pragma mark - SDCycleScrollViewDelegate

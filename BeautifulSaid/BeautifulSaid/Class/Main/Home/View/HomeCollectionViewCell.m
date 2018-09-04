@@ -35,7 +35,7 @@
             make.left.mas_equalTo(0);
             make.top.mas_equalTo(0);
             make.right.mas_equalTo(0);
-            make.height.mas_equalTo(FIT_WIDTH *9/16 + 50);
+            make.height.mas_equalTo((FIT_WIDTH - 30) *9/16 + 50);
         }];
         
         

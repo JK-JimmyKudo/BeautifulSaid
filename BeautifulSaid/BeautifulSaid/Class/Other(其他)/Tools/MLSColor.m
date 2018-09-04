@@ -104,4 +104,8 @@
     return [self colorWithHexString:@"#DCDCDC" alpha:1.0f];
 }
 
+
++(UIColor *)appTextFieldColor{
+    return [MLSColor colorWithRed:237 withGreen:237 withBlue:237 withAlpha:1];
+}
 @end

@@ -16,7 +16,8 @@
 #import "MLSColor.h"
 #import "YYFPSLabel.h"
 
-@interface MLSTabBarController ()
+
+@interface MLSTabBarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -33,6 +34,8 @@
     [self addChildVC:[[MLSShopViewController alloc]init] title:@"购物车" image:@"nav_cart_30x30_" selectedImage:@"nav_cart_s_30x30_"];
     
     [self addChildVC:[[MLSMEViewController alloc]init] title:@"我" image:@"nav_me_30x30_" selectedImage:@"nav_me_s_30x30_"];
+    
+    self.delegate = self;
     
 #if DEBUG
     //显示当前帧率
@@ -82,11 +85,29 @@
     
     [self addChildViewController:navc];
     
+    
+    
+//    self.selectedIndex = 2;
 }
 
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    if ( [viewController.tabBarItem.title isEqualToString:@"我"]) {
+        
+        MLSLoginViewController * login = [[MLSLoginViewController alloc] init];
+        
+        [self presentViewController:login animated:YES completion:nil];
+        
+        return NO;
+    }else{
+        return YES;
+    }
+}
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
     NSInteger index = [self.tabBar.items indexOfObject:item];
+    
+    
     [self playSound];//点击时音效
     [self animationWithIndex:index];
 }

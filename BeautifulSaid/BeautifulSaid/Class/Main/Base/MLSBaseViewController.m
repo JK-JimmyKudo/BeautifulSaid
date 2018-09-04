@@ -75,6 +75,10 @@
     [self searchView];
 }
 
+-(void)getRecommendData{
+    NSLog(@"网络请求");
+}
+
 #pragma mark - 接收到系统的内存警告时
 - (void)didReceiveMemoryWarning{
     

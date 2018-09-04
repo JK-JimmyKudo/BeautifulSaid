@@ -16,9 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setNavView];
 }
 
+-(void) setNavView{
+    [self setupNavView];
+    [self.navView.centerButton setTitle:@"购物车" forState:UIControlStateNormal];
+    self.navView.lineLabel.backgroundColor = [UIColor whiteColor];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

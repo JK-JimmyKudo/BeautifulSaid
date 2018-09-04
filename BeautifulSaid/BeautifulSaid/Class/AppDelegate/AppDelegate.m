@@ -10,7 +10,7 @@
 #import "MLSNavigationController.h"
 #import "MLSTabBarController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -24,17 +24,9 @@
     MLSTabBarController *tabbar = [[MLSTabBarController alloc] init];
     self.window.rootViewController = tabbar;
     [self.window makeKeyAndVisible];
-    
-
-    
-
-
-
-
 
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

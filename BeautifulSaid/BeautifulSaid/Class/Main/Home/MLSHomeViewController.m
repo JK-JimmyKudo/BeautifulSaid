@@ -41,11 +41,7 @@ static NSString *HeadInderfier = @"HomeHeadView";
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
-//    if (self.mainView) {
-//        [self.mainView showUI:[ZMUserInfo shareUserInfo].isLogin];
-//    }
-    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;    
 }
 
 
@@ -69,34 +65,16 @@ static NSString *HeadInderfier = @"HomeHeadView";
     
     
     
-    
-    
-    
-    
-    
-//    self.m_tableView = [[YYTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-//    [self.view addSubview:self.m_tableView];
-//    self.m_tableView.backgroundColor = [UIColor redColor];
-//    self.m_tableView.delegate = self;
-//    self.m_tableView.dataSource = self;
-//    [self.m_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.top.mas_equalTo(0);
-//        make.bottom.mas_equalTo(0);
-//    }];
-    
     WEAKSELF;
-//    self.m_tableView.mj_header = [ZMCustomGifHeader headerWithRefreshingBlock:^{
-////        page = 1;
-////        [weakSelf getRecommendData];
+//    self.m_collectionView.mj_header = [ZMCustomGifHeader headerWithRefreshingBlock:^{
+
 //    }];
     
     
-    self.m_collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-//        page ++;
-//        [weakSelf loadMoreRecommendList];
-    }];
+//    self.m_collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+
+//    }];
     
-    //[_tableView.mj_header beginRefreshing];
     [self getRecommendData];
 }
 
@@ -130,7 +108,7 @@ static NSString *HeadInderfier = @"HomeHeadView";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0 && indexPath.item == 0) {
-        return CGSizeMake(FIT_WIDTH, 130);
+        return CGSizeMake(FIT_WIDTH, 400 + 60);
     }
     return CGSizeMake((FIT_WIDTH - 30)/2, FIT_WIDTH *9/16 + 110);
 }
@@ -246,7 +224,7 @@ static NSString *HeadInderfier = @"HomeHeadView";
         
         [self.m_collectionView reloadData];
         
-        NSLog(@"rows == %@",rows)
+//        NSLog(@"rows == %@",rows)
         
         
     } failure:^(NSError *error) {

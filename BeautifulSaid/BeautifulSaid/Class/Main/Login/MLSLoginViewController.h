@@ -10,4 +10,6 @@
 
 @interface MLSLoginViewController : MLSBaseViewController
 
+@property (nonatomic,assign) NSInteger selectedIndex;
+
 @end

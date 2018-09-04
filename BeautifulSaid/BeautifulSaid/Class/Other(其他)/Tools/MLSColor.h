@@ -48,4 +48,7 @@
 
 /** 分割线颜色 #DCDCDC */
 + (UIColor *)appBottomLineColor;
+
++ (UIColor *)appTextFieldColor;
+
 @end
