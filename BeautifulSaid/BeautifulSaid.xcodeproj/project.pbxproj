@@ -120,6 +120,7 @@
 		856402A7213948D5009F9D57 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856402A6213948D5009F9D57 /* ImageIO.framework */; };
 		856402A9213949A1009F9D57 /* like.caf in Resources */ = {isa = PBXBuildFile; fileRef = 856402A8213949A0009F9D57 /* like.caf */; };
 		856402AD213963E8009F9D57 /* ZMNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 856402AC213963E8009F9D57 /* ZMNavView.m */; };
+		85688546213F807300755013 /* UIControl+BtnQuickLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 85688544213F807200755013 /* UIControl+BtnQuickLimit.m */; };
 		85CFFBA1213E610800F91057 /* HomeChildCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFFBA0213E610800F91057 /* HomeChildCell.m */; };
 		85CFFBA4213E674000F91057 /* HomePopularModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFFBA3213E674000F91057 /* HomePopularModel.m */; };
 		85CFFBA9213E847600F91057 /* UIFont+MyFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFFBA8213E847600F91057 /* UIFont+MyFont.m */; };
@@ -286,6 +287,8 @@
 		856402A8213949A0009F9D57 /* like.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = like.caf; sourceTree = "<group>"; };
 		856402AB213963E8009F9D57 /* ZMNavView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMNavView.h; sourceTree = "<group>"; };
 		856402AC213963E8009F9D57 /* ZMNavView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMNavView.m; sourceTree = "<group>"; };
+		85688544213F807200755013 /* UIControl+BtnQuickLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+BtnQuickLimit.m"; sourceTree = "<group>"; };
+		85688545213F807300755013 /* UIControl+BtnQuickLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+BtnQuickLimit.h"; sourceTree = "<group>"; };
 		85CFFB9F213E610800F91057 /* HomeChildCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeChildCell.h; sourceTree = "<group>"; };
 		85CFFBA0213E610800F91057 /* HomeChildCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeChildCell.m; sourceTree = "<group>"; };
 		85CFFBA2213E674000F91057 /* HomePopularModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePopularModel.h; sourceTree = "<group>"; };
@@ -539,6 +542,7 @@
 		8564022E21391F53009F9D57 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				85688547213F808000755013 /* NSObjectMethod */,
 				851F1C81213E570D00E2D2B6 /* TGWebController */,
 				851F1C6A213E475B00E2D2B6 /* SDCycleScrollView */,
 				851F1C60213E2F3900E2D2B6 /* YCMenuAction */,
@@ -749,11 +753,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		85688547213F808000755013 /* NSObjectMethod */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NSObjectMethod;
+			sourceTree = "<group>";
+		};
 		85CFFBA5213E842E00F91057 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				85CFFBA7213E847600F91057 /* UIFont+MyFont.h */,
 				85CFFBA8213E847600F91057 /* UIFont+MyFont.m */,
+				85688545213F807300755013 /* UIControl+BtnQuickLimit.h */,
+				85688544213F807200755013 /* UIControl+BtnQuickLimit.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1008,6 +1021,7 @@
 				856402AD213963E8009F9D57 /* ZMNavView.m in Sources */,
 				8564026F213933C8009F9D57 /* MLSTabBarController.m in Sources */,
 				851F1C7B213E475C00E2D2B6 /* UIView+SDExtension.m in Sources */,
+				85688546213F807300755013 /* UIControl+BtnQuickLimit.m in Sources */,
 				85CFFBA9213E847600F91057 /* UIFont+MyFont.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
