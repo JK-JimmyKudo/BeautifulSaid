@@ -130,6 +130,12 @@
 		85CFFBBB213E961F00F91057 /* login_qq_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85CFFBB5213E961F00F91057 /* login_qq_icon@3x.png */; };
 		85CFFBBC213E961F00F91057 /* login_sina_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85CFFBB6213E961F00F91057 /* login_sina_icon@3x.png */; };
 		85CFFBBD213E961F00F91057 /* login_wechat_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85CFFBB7213E961F00F91057 /* login_wechat_icon@3x.png */; };
+		C2CB294C213EDADC001C5CB1 /* hhhViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CB294B213EDADC001C5CB1 /* hhhViewController.m */; };
+		C2CB295B213EDD85001C5CB1 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CB2953213EDD84001C5CB1 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		C2CB295C213EDD85001C5CB1 /* UIView+KJIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CB2954213EDD84001C5CB1 /* UIView+KJIndexPath.m */; };
+		C2CB295D213EDD85001C5CB1 /* MBProgressHUD+KJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CB2955213EDD84001C5CB1 /* MBProgressHUD+KJExtension.m */; };
+		C2CB295E213EDD85001C5CB1 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CB2956213EDD84001C5CB1 /* UIView+Extension.m */; };
+		C2CB295F213EDD85001C5CB1 /* UIButton+KJIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CB2958213EDD85001C5CB1 /* UIButton+KJIndexPath.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -303,6 +309,18 @@
 		85CFFBB6213E961F00F91057 /* login_sina_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_sina_icon@3x.png"; sourceTree = "<group>"; };
 		85CFFBB7213E961F00F91057 /* login_wechat_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_wechat_icon@3x.png"; sourceTree = "<group>"; };
 		8C205711D4DD5120F4B6C02B /* libPods-BeautifulSaid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeautifulSaid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2CB294A213EDADC001C5CB1 /* hhhViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hhhViewController.h; sourceTree = "<group>"; };
+		C2CB294B213EDADC001C5CB1 /* hhhViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hhhViewController.m; sourceTree = "<group>"; };
+		C2CB2951213EDD83001C5CB1 /* UIButton+KJIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+KJIndexPath.h"; sourceTree = "<group>"; };
+		C2CB2952213EDD83001C5CB1 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		C2CB2953213EDD84001C5CB1 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		C2CB2954213EDD84001C5CB1 /* UIView+KJIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KJIndexPath.m"; sourceTree = "<group>"; };
+		C2CB2955213EDD84001C5CB1 /* MBProgressHUD+KJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+KJExtension.m"; sourceTree = "<group>"; };
+		C2CB2956213EDD84001C5CB1 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		C2CB2957213EDD84001C5CB1 /* MBProgressHUD+KJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+KJExtension.h"; sourceTree = "<group>"; };
+		C2CB2958213EDD85001C5CB1 /* UIButton+KJIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+KJIndexPath.m"; sourceTree = "<group>"; };
+		C2CB2959213EDD85001C5CB1 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		C2CB295A213EDD85001C5CB1 /* UIView+KJIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KJIndexPath.h"; sourceTree = "<group>"; };
 		F4D31CEF2A75F53FB82C7423 /* Pods-BeautifulSaid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautifulSaid.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeautifulSaid/Pods-BeautifulSaid.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -721,6 +739,8 @@
 			children = (
 				8564029C21394836009F9D57 /* MLSLoginViewController.h */,
 				8564029D21394836009F9D57 /* MLSLoginViewController.m */,
+				C2CB294A213EDADC001C5CB1 /* hhhViewController.h */,
+				C2CB294B213EDADC001C5CB1 /* hhhViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -763,6 +783,16 @@
 		85CFFBA5213E842E00F91057 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				C2CB2957213EDD84001C5CB1 /* MBProgressHUD+KJExtension.h */,
+				C2CB2955213EDD84001C5CB1 /* MBProgressHUD+KJExtension.m */,
+				C2CB2951213EDD83001C5CB1 /* UIButton+KJIndexPath.h */,
+				C2CB2958213EDD85001C5CB1 /* UIButton+KJIndexPath.m */,
+				C2CB2952213EDD83001C5CB1 /* UINavigationController+FDFullscreenPopGesture.h */,
+				C2CB2953213EDD84001C5CB1 /* UINavigationController+FDFullscreenPopGesture.m */,
+				C2CB2959213EDD85001C5CB1 /* UIView+Extension.h */,
+				C2CB2956213EDD84001C5CB1 /* UIView+Extension.m */,
+				C2CB295A213EDD85001C5CB1 /* UIView+KJIndexPath.h */,
+				C2CB2954213EDD84001C5CB1 /* UIView+KJIndexPath.m */,
 				85CFFBA7213E847600F91057 /* UIFont+MyFont.h */,
 				85CFFBA8213E847600F91057 /* UIFont+MyFont.m */,
 				85688545213F807300755013 /* UIControl+BtnQuickLimit.h */,
@@ -987,13 +1017,16 @@
 				8564026221393246009F9D57 /* MLSShopViewController.m in Sources */,
 				8564026A21393263009F9D57 /* MLSNavigationController.m in Sources */,
 				85CFFBA4213E674000F91057 /* HomePopularModel.m in Sources */,
+				C2CB294C213EDADC001C5CB1 /* hhhViewController.m in Sources */,
 				8564021B21391B7B009F9D57 /* ViewController.m in Sources */,
 				853CED6A213D23E9004A26E4 /* YYCollectionView.m in Sources */,
 				8564029E21394836009F9D57 /* MLSLoginViewController.m in Sources */,
+				C2CB295C213EDD85001C5CB1 /* UIView+KJIndexPath.m in Sources */,
 				851F1C7F213E475C00E2D2B6 /* TAAnimatedDotView.m in Sources */,
 				853CED60213D1682004A26E4 /* ZMNetworkHelper.m in Sources */,
 				856402A221394862009F9D57 /* MLSRegisViewController.m in Sources */,
 				853CED56213D0B4F004A26E4 /* YYTableViewCell.m in Sources */,
+				C2CB295F213EDD85001C5CB1 /* UIButton+KJIndexPath.m in Sources */,
 				851F1C7E213E475C00E2D2B6 /* TAPageControl.m in Sources */,
 				851F1C80213E475C00E2D2B6 /* TAAbstractDotView.m in Sources */,
 				85CFFBA1213E610800F91057 /* HomeChildCell.m in Sources */,
@@ -1008,12 +1041,15 @@
 				853CED57213D0B4F004A26E4 /* YYTableView.m in Sources */,
 				851F1C7D213E475C00E2D2B6 /* TADotView.m in Sources */,
 				851F1C63213E2F4900E2D2B6 /* YCMenuView.m in Sources */,
+				C2CB295E213EDD85001C5CB1 /* UIView+Extension.m in Sources */,
 				851F1C7A213E475C00E2D2B6 /* SDCycleScrollView.m in Sources */,
+				C2CB295B213EDD85001C5CB1 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				8564025E2139322A009F9D57 /* MLSMEViewController.m in Sources */,
 				8564029A213945EC009F9D57 /* YYFPSLabel.m in Sources */,
 				853CED6D213D25FC004A26E4 /* HomeCollectionViewCell.m in Sources */,
 				853CED67213D23C2004A26E4 /* YYCollectionViewcell.m in Sources */,
 				8564025721393218009F9D57 /* MLSCateViewController.m in Sources */,
+				C2CB295D213EDD85001C5CB1 /* MBProgressHUD+KJExtension.m in Sources */,
 				851F1C69213E349E00E2D2B6 /* HomePopularCell.m in Sources */,
 				853CED70213D296B004A26E4 /* HomeModels.m in Sources */,
 				851F1C8A213E570D00E2D2B6 /* TGWebProgressLayer.m in Sources */,
@@ -1165,8 +1201,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 83MLD9ZCC3;
-				GCC_PREFIX_HEADER = "/Users/power/Desktop/BeautifulSaid/BeautifulSaid/BeautifulSaid/Class/Macros(宏)/MLSHeaderPrefix.pch";
+				DEVELOPMENT_TEAM = FFFG363XAU;
+				GCC_PREFIX_HEADER = "/Users/lilinjie/Desktop/BeautifulSaid/BeautifulSaid/BeautifulSaid/Class/Macros(宏)/MLSHeaderPrefix.pch";
 				INFOPLIST_FILE = BeautifulSaid/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1186,8 +1222,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 83MLD9ZCC3;
-				GCC_PREFIX_HEADER = "/Users/power/Desktop/BeautifulSaid/BeautifulSaid/BeautifulSaid/Class/Macros(宏)/MLSHeaderPrefix.pch";
+				DEVELOPMENT_TEAM = FFFG363XAU;
+				GCC_PREFIX_HEADER = "/Users/lilinjie/Desktop/BeautifulSaid/BeautifulSaid/BeautifulSaid/Class/Macros(宏)/MLSHeaderPrefix.pch";
 				INFOPLIST_FILE = BeautifulSaid/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

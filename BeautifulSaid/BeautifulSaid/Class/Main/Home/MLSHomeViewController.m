@@ -13,6 +13,7 @@
 #import "MLSLoginViewController.h"
 #import "HomePopularCell.h"
 #import "HomeHeadView.h"
+#import "hhhViewController.h"
 
 @interface MLSHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -163,8 +164,13 @@ static NSString *HeadInderfier = @"HomeHeadView";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    MLSLoginViewController *vc = [[MLSLoginViewController alloc] init];
-    [self.navigationController presentViewController:vc animated:YES completion:nil];
+//    MLSLoginViewController *vc = [[MLSLoginViewController alloc] init];
+//    [self.navigationController presentViewController:vc animated:YES completion:nil];
+    
+    
+    hhhViewController *vc = [[hhhViewController alloc] init];
+
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
