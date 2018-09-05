@@ -521,7 +521,6 @@
 				8564022E21391F53009F9D57 /* Vender(第三方) */,
 				8564022D21391F50009F9D57 /* Other(其他) */,
 				8564023221391F82009F9D57 /* Expand(扩展) */,
-				8564023121391F81009F9D57 /* Resource(资源) */,
 				85CFFBA5213E842E00F91057 /* Category */,
 				8564023321391FCF009F9D57 /* Macros(宏) */,
 			);
@@ -572,13 +571,6 @@
 				856402372139205C009F9D57 /* AppDelegate+Utils.m */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		8564023121391F81009F9D57 /* Resource(资源) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Resource(资源)";
 			sourceTree = "<group>";
 		};
 		8564023221391F82009F9D57 /* Expand(扩展) */ = {
