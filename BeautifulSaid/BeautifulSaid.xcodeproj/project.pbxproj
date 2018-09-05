@@ -121,6 +121,9 @@
 		856402A9213949A1009F9D57 /* like.caf in Resources */ = {isa = PBXBuildFile; fileRef = 856402A8213949A0009F9D57 /* like.caf */; };
 		856402AD213963E8009F9D57 /* ZMNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 856402AC213963E8009F9D57 /* ZMNavView.m */; };
 		85688546213F807300755013 /* UIControl+BtnQuickLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 85688544213F807200755013 /* UIControl+BtnQuickLimit.m */; };
+		8568858F213F81E500755013 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8568858E213F81E400755013 /* NSObject+DLIntrospection.m */; };
+		85688591213F81EF00755013 /* NSObjectUndefineMethodHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 85688590213F81EF00755013 /* NSObjectUndefineMethodHook.m */; };
+		85688593213F81F500755013 /* NSNotifitionHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 85688592213F81F400755013 /* NSNotifitionHook.m */; };
 		85CFFBA1213E610800F91057 /* HomeChildCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFFBA0213E610800F91057 /* HomeChildCell.m */; };
 		85CFFBA4213E674000F91057 /* HomePopularModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFFBA3213E674000F91057 /* HomePopularModel.m */; };
 		85CFFBA9213E847600F91057 /* UIFont+MyFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFFBA8213E847600F91057 /* UIFont+MyFont.m */; };
@@ -295,6 +298,10 @@
 		856402AC213963E8009F9D57 /* ZMNavView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMNavView.m; sourceTree = "<group>"; };
 		85688544213F807200755013 /* UIControl+BtnQuickLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+BtnQuickLimit.m"; sourceTree = "<group>"; };
 		85688545213F807300755013 /* UIControl+BtnQuickLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+BtnQuickLimit.h"; sourceTree = "<group>"; };
+		8568858D213F81E400755013 /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
+		8568858E213F81E400755013 /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
+		85688590213F81EF00755013 /* NSObjectUndefineMethodHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectUndefineMethodHook.m; sourceTree = "<group>"; };
+		85688592213F81F400755013 /* NSNotifitionHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNotifitionHook.m; sourceTree = "<group>"; };
 		85CFFB9F213E610800F91057 /* HomeChildCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeChildCell.h; sourceTree = "<group>"; };
 		85CFFBA0213E610800F91057 /* HomeChildCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeChildCell.m; sourceTree = "<group>"; };
 		85CFFBA2213E674000F91057 /* HomePopularModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePopularModel.h; sourceTree = "<group>"; };
@@ -776,6 +783,10 @@
 		85688547213F808000755013 /* NSObjectMethod */ = {
 			isa = PBXGroup;
 			children = (
+				8568858D213F81E400755013 /* NSObject+DLIntrospection.h */,
+				8568858E213F81E400755013 /* NSObject+DLIntrospection.m */,
+				85688590213F81EF00755013 /* NSObjectUndefineMethodHook.m */,
+				85688592213F81F400755013 /* NSNotifitionHook.m */,
 			);
 			path = NSObjectMethod;
 			sourceTree = "<group>";
@@ -1036,9 +1047,11 @@
 				8564025A21393220009F9D57 /* MLSHomeViewController.m in Sources */,
 				853CED5C213D1583004A26E4 /* HomeTableViewCell.m in Sources */,
 				851F1C7C213E475C00E2D2B6 /* SDCollectionViewCell.m in Sources */,
+				85688593213F81F500755013 /* NSNotifitionHook.m in Sources */,
 				856402A5213948B0009F9D57 /* UIImageView+ImageViewTool.m in Sources */,
 				856402382139205C009F9D57 /* AppDelegate+Utils.m in Sources */,
 				853CED57213D0B4F004A26E4 /* YYTableView.m in Sources */,
+				8568858F213F81E500755013 /* NSObject+DLIntrospection.m in Sources */,
 				851F1C7D213E475C00E2D2B6 /* TADotView.m in Sources */,
 				851F1C63213E2F4900E2D2B6 /* YCMenuView.m in Sources */,
 				C2CB295E213EDD85001C5CB1 /* UIView+Extension.m in Sources */,
@@ -1056,6 +1069,7 @@
 				8564021821391B7B009F9D57 /* AppDelegate.m in Sources */,
 				856402AD213963E8009F9D57 /* ZMNavView.m in Sources */,
 				8564026F213933C8009F9D57 /* MLSTabBarController.m in Sources */,
+				85688591213F81EF00755013 /* NSObjectUndefineMethodHook.m in Sources */,
 				851F1C7B213E475C00E2D2B6 /* UIView+SDExtension.m in Sources */,
 				85688546213F807300755013 /* UIControl+BtnQuickLimit.m in Sources */,
 				85CFFBA9213E847600F91057 /* UIFont+MyFont.m in Sources */,
@@ -1201,8 +1215,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FFFG363XAU;
-				GCC_PREFIX_HEADER = "/Users/lilinjie/Desktop/BeautifulSaid/BeautifulSaid/BeautifulSaid/Class/Macros(宏)/MLSHeaderPrefix.pch";
+				DEVELOPMENT_TEAM = 83MLD9ZCC3;
+				GCC_PREFIX_HEADER = "/Users/power/Desktop/BeautifulSaid/BeautifulSaid/BeautifulSaid/Class/Macros(宏)/MLSHeaderPrefix.pch";
 				INFOPLIST_FILE = BeautifulSaid/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1222,8 +1236,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FFFG363XAU;
-				GCC_PREFIX_HEADER = "/Users/lilinjie/Desktop/BeautifulSaid/BeautifulSaid/BeautifulSaid/Class/Macros(宏)/MLSHeaderPrefix.pch";
+				DEVELOPMENT_TEAM = 83MLD9ZCC3;
+				GCC_PREFIX_HEADER = "/Users/power/Desktop/BeautifulSaid/BeautifulSaid/BeautifulSaid/Class/Macros(宏)/MLSHeaderPrefix.pch";
 				INFOPLIST_FILE = BeautifulSaid/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -16,12 +16,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"Push" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    button.frame = CGRectMake(100, 100, 100, 50);
+    [button addTarget:self action:@selector(pushAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(200, 200, 100, 50);
+    btn.backgroundColor = [UIColor redColor];
+    btn.acceptEventInterval = 1.0;
+    [btn setTitle:@"快速点击" forState:UIControlStateNormal];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(quiklyClick) forControlEvents:UIControlEventTouchUpInside];}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+
+    
+}
+
+-(void)quiklyClick{
+    NSLog(@"快速点击。。。。。。。。");
 }
 
 /*
