@@ -50,9 +50,9 @@ static NSString *HeadInderfier = @"HomeHeadView";
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    flowLayout.itemSize = CGSizeMake((FIT_WIDTH - 30)/2, FIT_WIDTH *9/16 + 110);
+    flowLayout.itemSize = CGSizeMake((kScreenWidth - 30)/2, kScreenWidth *9/16 + 110);
 
-    self.m_collectionView = [[YYCollectionView alloc] initWithFrame:CGRectMake(0, -20, FIT_WIDTH, FIT_HEIGHT-20) collectionViewLayout:flowLayout];
+    self.m_collectionView = [[YYCollectionView alloc] initWithFrame:CGRectMake(0, -20, kScreenWidth, kScreenHeight-20) collectionViewLayout:flowLayout];
     self.m_collectionView.backgroundColor = [UIColor blueColor];
     self.m_collectionView.delegate = self;
     self.m_collectionView.dataSource = self;
@@ -109,9 +109,9 @@ static NSString *HeadInderfier = @"HomeHeadView";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0 && indexPath.item == 0) {
-        return CGSizeMake(FIT_WIDTH, 400 + 60);
+        return CGSizeMake(kScreenWidth, 400 + 60);
     }
-    return CGSizeMake((FIT_WIDTH - 30)/2, FIT_WIDTH *9/16 + 110);
+    return CGSizeMake((kScreenWidth - 30)/2, kScreenWidth *9/16 + 110);
 }
 
 
@@ -127,7 +127,7 @@ static NSString *HeadInderfier = @"HomeHeadView";
     if (section == 1) {
         return CGSizeMake(0, 0);
     }
-    return CGSizeMake(FIT_WIDTH, FIT_WIDTH *9/16 + FIT_WIDTH *9/16 + 40 + 150 + 10);
+    return CGSizeMake(kScreenWidth, kScreenWidth *9/16 + kScreenWidth *9/16 + 40 + 150 + 10);
 }
 
 

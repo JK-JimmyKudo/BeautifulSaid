@@ -53,7 +53,7 @@ static NSString *inderfier = @"HomeChildCell";
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         flowLayout.minimumLineSpacing = 0;
         flowLayout.minimumInteritemSpacing = 0;
-        self.collectionView = [[YYCollectionView alloc] initWithFrame:CGRectMake(0, 35, FIT_WIDTH, 360) collectionViewLayout:flowLayout];
+        self.collectionView = [[YYCollectionView alloc] initWithFrame:CGRectMake(0, 35, kScreenWidth, 360) collectionViewLayout:flowLayout];
         self.collectionView.backgroundColor = [UIColor redColor];
         self.collectionView.delegate = self;
         self.collectionView.dataSource = self;
@@ -92,7 +92,7 @@ static NSString *inderfier = @"HomeChildCell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return CGSizeMake((FIT_WIDTH /4), 360/3);
+    return CGSizeMake((kScreenWidth /4), 360/3);
 }
 
 

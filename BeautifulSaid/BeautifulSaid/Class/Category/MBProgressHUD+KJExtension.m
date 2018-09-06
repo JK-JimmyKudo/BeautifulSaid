@@ -85,6 +85,33 @@
     [hud hideAnimated:YES afterDelay:2.5];
 }
 
++ (MBProgressHUD *)showImageMessage:(NSString *)message ToView:(UIView *)view {
+    
+    if (view == nil) view = (UIView*)[UIApplication sharedApplication].delegate.window;
+    if (message == nil) {message = @"加载中...";}
+    // 快速显示一个提示信息
+    
+    UIImageView *images = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0,  50,  50)];
+    NSMutableArray *imageArray = [[NSMutableArray alloc]init];
+    for(int i = 1; i <= 10 ; i++){
+        NSString *imgName = [NSString stringWithFormat:@"Refresh%d",i];
+        [imageArray addObject:[UIImage imageNamed:imgName]];
+    }
+    images.animationDuration = 0.7;
+    images.animationImages = imageArray;
+    //开始播放
+    [images startAnimating];
+    //自定义
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.color = [UIColor clearColor];
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = images;
+    hud.labelText = message;
+    hud.labelColor = [UIColor grayColor];
+    return hud;
+    
+}
+
 
 + (void)hideHUD
 {

@@ -37,7 +37,7 @@
 
 - (void)setUpUI {
     
-    self.tgWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, KItemHeight, FIT_WIDTH, FIT_HEIGHT - KItemHeight)];
+    self.tgWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, KItemHeight, SCREEN_WIDTH, SCREENH_HEIGHT - KItemHeight)];
     self.tgWebView.navigationDelegate =self;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.url]];
     [self.tgWebView loadRequest:request];

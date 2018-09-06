@@ -18,6 +18,8 @@
 
 + (void)showMessageWithText:(NSString *)msg;
 
++ (MBProgressHUD *)showImageMessage:(NSString *)message ToView:(UIView *)view;
+
 + (void)hideHUD;
 
 @end

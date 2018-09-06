@@ -46,7 +46,7 @@
     
     
     // 网络加载 --- 创建带标题的图片轮播器
-    SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, FIT_WIDTH, FIT_WIDTH *9/16) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth *9/16) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     cycleScrollView2.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     cycleScrollView2.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
@@ -62,8 +62,8 @@
     
     NSArray *array = @[@"全场包邮",@"先行赔付",@"7天无忧退",@"退货补贴"];
     
-    CGFloat Y = FIT_WIDTH *9/16;
-    CGFloat width = FIT_WIDTH / (array.count);
+    CGFloat Y = kScreenWidth *9/16;
+    CGFloat width = kScreenWidth / (array.count);
     CGFloat height = 40;
     for (NSInteger i = 0; i < array.count; i++) {
         UIButton *btn = [[UIButton alloc] init];
@@ -100,15 +100,15 @@
      @"title": @"直播特卖"
      }];
     
-    CGFloat Y = FIT_WIDTH *9/16 + 40 + 5;
+    CGFloat Y = kScreenWidth *9/16 + 40 + 5;
     self.mainView = [[UIView alloc] init];
     self.mainView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.mainView];
-    self.mainView.frame = CGRectMake(0, Y, FIT_WIDTH, 150);
+    self.mainView.frame = CGRectMake(0, Y, kScreenWidth, 150);
     
     CGFloat height = 80;
     CGFloat width = 80;
-    CGFloat margin = (FIT_WIDTH - (images.count)*width)/5;
+    CGFloat margin = (kScreenWidth - (images.count)*width)/5;
     
     for (NSInteger i = 0;  i<images.count; i++) {
         
@@ -147,10 +147,10 @@
     [imageView sd_setImageWithURL:[NSURL URLWithString:dict[@"image"]] placeholderImage:nil];
     [self addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(FIT_WIDTH *9/16 + 40 + 150 + 10);
+        make.top.mas_equalTo(kScreenWidth *9/16 + 40 + 150 + 10);
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.height.mas_equalTo(FIT_WIDTH *9/16);
+        make.height.mas_equalTo(kScreenWidth *9/16);
     }];
 
     UITapGestureRecognizer *tag = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushWebView)];

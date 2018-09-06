@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIFont (MyFont)
+@interface UIFont (ZSPSize)
 
 @end
