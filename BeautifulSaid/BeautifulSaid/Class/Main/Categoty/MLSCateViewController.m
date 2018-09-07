@@ -179,41 +179,27 @@ static const CGFloat JXheightForHeaderInSection = 50;
 -(void)getRecommendData{
     
     NSString *urlStr = @"http://simba-api.meilishuo.com/mlselection/top/v1/topGoodsList/ios?_ab=3400&_app=mls&_at=ca2e1fa056fb9dc2&_atype=iphone&_av=940&_channel=NILAppStore&_did=24B25A27-8C3D-4CA7-8BC5-A49766AD513F&_fs=NILAppStore940&_isRoot=0&_lang=zh_CN&_network=-1&_saveMode=1&_sdklevel=10.3.1&_swidth=1242&_t=1536222094&_version=9.4.0.3400&minfo=iPhone9%2C2&tid-fpid=RQ0qlhTONdQdtabXlTrdov&tid-token=k5my3vtMSXOpOGEcbbNhbg&limit=50&offset=0&type=sytq";
-    
     [ZMNetworkHelper requestGETWithRequestURL:urlStr parameters:nil success:^(id responseObject) {
-        
         NSArray *rows = responseObject[@"data"][@"rows"];
-        
         for (NSDictionary *dict in rows) {
             HomeModels *model = [HomeModels modelWithDictionary:dict];
             [self.rowsArray addObject:model];
         }
-        
         [self.powerListView configHobbyListViewArray:self.rowsArray];
         [self.hobbyListView configHobbyListViewArray:self.rowsArray];
         [self.partnerListView configHobbyListViewArray:self.rowsArray];
-
     } failure:^(NSError *error) {
-        
     }];
-}
-
--(NSMutableArray *)rowsArray{
     
+    /*
+     http://d.meilishuo.com/detail/mls/v1/main?_ab=3400&_app=mls&_at=0dcd22be527a6a62&_atype=iphone&_av=940&_channel=NILAppStore&_did=24B25A27-8C3D-4CA7-8BC5-A49766AD513F&_fs=NILAppStore940&_isRoot=0&_lang=zh_CN&_network=2&_saveMode=0&_sdklevel=10.3.1&_swidth=1242&_t=1536226900&_version=9.4.0.3400&minfo=iPhone9%2C2&tid-fpid=RQ0qlhTONdQdtabXlTrdov&tid-token=k5my3vtMSXOpOGEcbbNhbg&acm=3.ms.0_4_1m6634i.0.13385-26167-69004.ni0a4r2RluivD.sd_117-t_-lc_1&iid=1m6634i&itemInfoId=1m6634i
+     */
+    
+}
+-(NSMutableArray *)rowsArray{
     if (!_rowsArray) {
         _rowsArray = [NSMutableArray array];
     }
     return _rowsArray;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
