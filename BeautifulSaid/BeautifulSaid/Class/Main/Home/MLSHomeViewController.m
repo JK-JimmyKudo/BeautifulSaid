@@ -14,6 +14,8 @@
 #import "HomePopularCell.h"
 #import "HomeHeadView.h"
 #import "hhhViewController.h"
+#import "PWSearchViewController.h"
+#import "SubLBXScanViewController.h"
 
 @interface MLSHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -46,13 +48,30 @@ static NSString *HeadInderfier = @"HomeHeadView";
 }
 
 
+#pragma mark -- 搜索框代理
+
+- (void)textFieldShouldBeginEditingSearchView:(PWSearchView *)searchView
+{
+    
+    PWSearchViewController *SearchView = [[PWSearchViewController alloc] init];
+    [self.navigationController pushViewController:SearchView animated:YES];
+}
+
+- (void)searchButtonWasPressedForSearchView:(PWSearchView *)searchView
+{
+
+    SubLBXScanViewController *ScanView = [[SubLBXScanViewController alloc] init];
+    [self.navigationController pushViewController:ScanView animated:YES];
+    NSLog(@"跳转扫码界面");
+}
+
 - (void)setupMainView{
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    flowLayout.itemSize = CGSizeMake((kScreenWidth - 30)/2, kScreenWidth *9/16 + 110);
+//    flowLayout.itemSize = CGSizeMake((kScreenWidth - 30)/2, kScreenWidth *9/16 + 110);
 
-    self.m_collectionView = [[YYCollectionView alloc] initWithFrame:CGRectMake(0, -20, kScreenWidth, kScreenHeight-20) collectionViewLayout:flowLayout];
+    self.m_collectionView = [[YYCollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) collectionViewLayout:flowLayout];
     self.m_collectionView.backgroundColor = [UIColor blueColor];
     self.m_collectionView.delegate = self;
     self.m_collectionView.dataSource = self;
@@ -67,8 +86,10 @@ static NSString *HeadInderfier = @"HomeHeadView";
     
     
     WEAKSELF;
+    
+    
 //    self.m_collectionView.mj_header = [ZMCustomGifHeader headerWithRefreshingBlock:^{
-
+//
 //    }];
     
     
@@ -194,45 +215,15 @@ static NSString *HeadInderfier = @"HomeHeadView";
 
 -(void)getRecommendData{
     
-    /*
-     "data": {
-     "list": [{
-     "image": "http://s17.mogucdn.com/p2/170122/upload_6lkla7d40ff9lej2b6eid3jkbeed4_750x1334.jpg",
-     "link": "http://m.meilishuo.com/member/birth?acm=3.mce.2_10_1a61i.35477..5Qe7Xr2zgjION.pos_0-m_237167-sd_119",
-     "acm": "3.mce.2_10_1a61i.35477..5Qe7Xr2zgjION.pos_0-m_237167-sd_119",
-     "title": "生日特权"
-     }],
-     "isEnd": false,
-     "nextPage": 2,
-     "context": {
-     "currentTime": 1535959687
-     }
-     }
-     */
-    
-
-    
-  
-    
     NSString *urlStr = @"http://simba-api.meilishuo.com/mlselection/top/v1/topGoodsList/ios?_ab=3400&_app=mls&_at=e4197c2fae334463&_atype=iphone&_av=940&_channel=NILAppStore&_did=24B25A27-8C3D-4CA7-8BC5-A49766AD513F&_fs=NILAppStore940&_isRoot=0&_lang=zh_CN&_network=-1&_saveMode=1&_sdklevel=10.3.1&_swidth=1242&_t=1535959687&_version=9.4.0.3400&minfo=iPhone9%2C2&tid-fpid=RQ0qlhTONdQdtabXlTrdov&tid-token=zzwnUjxmRSOqV2DUj15I3g&limit=50&offset=0&type=sytq";
     
     [ZMNetworkHelper requestGETWithRequestURL:urlStr parameters:nil success:^(id responseObject) {
-       
-//        NSLog(@"responseObject == %@",responseObject);
-        
         NSArray *rows  = responseObject[@"data"][@"rows"];
-        
-        
         for ( NSDictionary *dict in rows) {
             HomeModels *model = [HomeModels modelWithDictionary:dict];
             [self.m_rowsArray addObject:model];
         }
-        
         [self.m_collectionView reloadData];
-        
-//        NSLog(@"rows == %@",rows)
-        
-        
     } failure:^(NSError *error) {
         
     }];

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MLSBaseViewController.h"
+#import "PWBaseViewController.h"
 
-@interface TGWebViewController : MLSBaseViewController
+@interface TGWebViewController : PWBaseViewController
 
 
 /** 相关链接*/

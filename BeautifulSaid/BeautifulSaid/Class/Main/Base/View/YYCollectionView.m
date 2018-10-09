@@ -19,30 +19,30 @@
 //    self.estimatedRowHeight = 0;
 //    self.estimatedSectionHeaderHeight = 0;
 //    self.estimatedSectionFooterHeight = 0;
-    if ([self respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
-        if (@available(iOS 11.0, *)) {
-            self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            // Fallback on earlier versions
-        }if (@available(iOS 11.0, *)) {
-            self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            // Fallback on earlier versions
-        }
-    }
+//    if ([self respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
+//        if (@available(iOS 11.0, *)) {
+//            self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        } else {
+//            // Fallback on earlier versions
+//        }if (@available(iOS 11.0, *)) {
+//            self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        } else {
+//            // Fallback on earlier versions
+//        }
+//    }
 #endif
     // Remove touch delay (since iOS 8)
-    UIView *wrapView = self.subviews.firstObject;
-    // UITableViewWrapperView
-    if (wrapView && [NSStringFromClass(wrapView.class) hasSuffix:@"WrapperView"]) {
-        for (UIGestureRecognizer *gesture in wrapView.gestureRecognizers) {
-            // UIScrollViewDelayedTouchesBeganGestureRecognizer
-            if ([NSStringFromClass(gesture.class) containsString:@"DelayedTouchesBegan"] ) {
-                gesture.enabled = NO;
-                break;
-            }
-        }
-    }
+//    UIView *wrapView = self.subviews.firstObject;
+//    // UITableViewWrapperView
+//    if (wrapView && [NSStringFromClass(wrapView.class) hasSuffix:@"WrapperView"]) {
+//        for (UIGestureRecognizer *gesture in wrapView.gestureRecognizers) {
+//            // UIScrollViewDelayedTouchesBeganGestureRecognizer
+//            if ([NSStringFromClass(gesture.class) containsString:@"DelayedTouchesBegan"] ) {
+//                gesture.enabled = NO;
+//                break;
+//            }
+//        }
+//    }
     
     return self;
 }

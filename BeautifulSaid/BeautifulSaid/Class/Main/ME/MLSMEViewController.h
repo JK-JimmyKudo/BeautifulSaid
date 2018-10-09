@@ -6,9 +6,9 @@
 //  Copyright © 2018年 BeautifulSaid. All rights reserved.
 //
 
-#import "MLSBaseViewController.h"
+#import "PWBaseViewController.h"
 
-@interface MLSMEViewController : MLSBaseViewController
+@interface MLSMEViewController : PWBaseViewController
 
 
 

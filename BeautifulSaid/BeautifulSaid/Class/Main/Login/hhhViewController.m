@@ -6,13 +6,20 @@
 //  Copyright © 2018年 BeautifulSaid. All rights reserved.
 //
 
+#define kTOPSCROLLVIEWWIDTH (300)
+
 #import "hhhViewController.h"
 
-@interface hhhViewController ()
+@interface hhhViewController ()<UIScrollViewDelegate>
+
+@property(nonatomic,strong)UIScrollView *topScrollView;
 
 @property (nonatomic,strong) UIScrollView *scrollView;
 
 @property (nonatomic,assign) CGFloat imageViewY;
+
+@property (nonatomic,strong) NSMutableArray *listArray;
+
 @end
 
 @implementation hhhViewController
@@ -23,24 +30,22 @@
     [self setupNavView];
     [self.navView.centerButton setTitle:@"我的订单" forState:UIControlStateNormal];
     
-    
     self.scrollView = [[UIScrollView alloc] init];
     self.scrollView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:self.scrollView];
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
+        make.height.mas_equalTo(300);
         make.top.mas_equalTo(0);
-        make.bottom.mas_equalTo(0);
     }];
-    
-    
+
     [self setupUI];
 }
 
 -(void)setupUI{
 
-   NSArray *list = @[@"http://s3.mogucdn.com/mlcdn/c45406/180901_0j2gfb2k9ilaadhfh0f8i0cbkdlaj_800x800.jpg",
+   self.listArray = @[@"http://s3.mogucdn.com/mlcdn/c45406/180901_0j2gfb2k9ilaadhfh0f8i0cbkdlaj_800x800.jpg",
                      @"http://s3.mogucdn.com/mlcdn/c45406/180901_6e39lc0dl0dba03c0h9bcjhc9073h_3024x3024.jpg",
                      @"http://s3.mogucdn.com/mlcdn/c45406/180901_1l647alk48gl3j5hfg1ad6kkcf3ec_800x800.jpg",
                      @"http://s11.mogucdn.com/mlcdn/c45406/180901_4i035f7lhcikaaea94c6k81c1fga6_800x800.jpg",
@@ -71,54 +76,52 @@
     
     WEAKSELF;
     
+    
+//    _topScrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
+//    _topScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(kTOPSCROLLVIEWSPACE, 0, kTOPSCROLLVIEWWIDTH, 200)];
+//    _topScrollView.contentSize = CGSizeMake(kTOPSCROLLVIEWWIDTH*3, 0);
+//    _topScrollView.backgroundColor = [UIColor redColor];
+//    _topScrollView.pagingEnabled = YES;
+//    _topScrollView.bounces = NO;
+//    _topScrollView.clipsToBounds  = NO;
+//    _topScrollView.delegate = self;
+//    _topScrollView.showsHorizontalScrollIndicator = NO;
+//    for (int i = 0; i<3; i++) {
+//        UIView *v = [[UIView alloc] initWithFrame:CGRectMake(i*(kTOPSCROLLVIEWWIDTH +10), 0, kTOPSCROLLVIEWWIDTH, 200)];
+//        v.backgroundColor = randomColor;
+//        [_topScrollView addSubview:v];
+//    }
+    [self.scrollView addSubview:_topScrollView];
+    
+    
     weakSelf.imageViewY = 0;
     
-    for (NSInteger i = 0; i<list.count; i++) {
+    for (NSInteger i = 0; i<self.listArray.count; i++) {
         
         
-        UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
-        [self.scrollView addSubview:imageView];
-        NSString *imgUrl = [list safeObjectAtIndex:i];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:imgUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-            
-            NSLog(@"image.size == %f == %f",image.size.width,image.size.height);
-            
-            weakSelf.imageViewY += (image.size.height/3 + 10);
-            
-            [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.centerX.mas_equalTo(self.scrollView);
-                make.width.mas_equalTo(SCREEN_WIDTH);
-                make.top.mas_equalTo(weakSelf.imageViewY);
-                make.height.mas_equalTo(image.size.height/3);
-            }];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, weakSelf.imageViewY);
-            });
-            
-        }];
-        
-//        [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:imgUrl] options:SDWebImageDownloaderHighPriority progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+//        UIImageView *imageView = [[UIImageView alloc] init];
+//        imageView.contentMode = UIViewContentModeScaleAspectFill;
+//        [self.scrollView addSubview:imageView];
+//        NSString *imgUrl = [list safeObjectAtIndex:i];
+//        [imageView sd_setImageWithURL:[NSURL URLWithString:imgUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//
 //            NSLog(@"image.size == %f == %f",image.size.width,image.size.height);
-//            weakSelf.imageViewY = (450 + 10) * i;
+//
+//            weakSelf.imageViewY += (image.size.height/3 + 10);
 //
 //            [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
 //                make.centerX.mas_equalTo(self.scrollView);
 //                make.width.mas_equalTo(SCREEN_WIDTH);
 //                make.top.mas_equalTo(weakSelf.imageViewY);
-//                make.height.mas_equalTo(450);
+//                make.height.mas_equalTo(image.size.height/3);
 //            }];
 //
 //            dispatch_async(dispatch_get_main_queue(), ^{
 //
 //                self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, weakSelf.imageViewY);
 //            });
-//        }];
 //
-        
-        
+//        }];
     }
 }
 

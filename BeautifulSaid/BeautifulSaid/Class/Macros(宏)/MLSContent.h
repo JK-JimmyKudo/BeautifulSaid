@@ -11,7 +11,7 @@
 
 #import "ZMNavView.h"
 #import "MLSColor.h"
-#import "MLSearchView.h"
+#import "PWSearchView.h"
 #import "YYTableView.h"
 #import "YYTableViewCell.h"
 #import "ZMNetworkHelper.h"
@@ -26,7 +26,9 @@
 #import "NSMutableArray+Safe.h"
 #import "UIFont+ZSPSize.h"
 #import "HomeModels.h"
-
+#import "UITableView+KFRefresh.h"
+#import "ZMCustomGifHeader.h"
+#import "ZMCustomGifFooter.h"
 
 #import <YYKit/YYKit.h>
 #import <MJRefresh/MJRefresh.h>
