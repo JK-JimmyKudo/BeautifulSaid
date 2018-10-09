@@ -258,6 +258,17 @@
 		85033B60216C9B5B0089DD7A /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 85033A82216C9B5A0089DD7A /* COPYING */; };
 		85033B65216C9B840089DD7A /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85033B62216C9B830089DD7A /* CodeScan.bundle */; };
 		85033B66216C9B840089DD7A /* SubLBXScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85033B63216C9B830089DD7A /* SubLBXScanViewController.m */; };
+		85033B6F216CA0E30089DD7A /* SKTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 85033B69216CA0E30089DD7A /* SKTag.m */; };
+		85033B70216CA0E30089DD7A /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85033B6B216CA0E30089DD7A /* SKTagView.m */; };
+		85033B71216CA0E30089DD7A /* SKTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 85033B6E216CA0E30089DD7A /* SKTagButton.m */; };
+		85033B74216CA39D0089DD7A /* SearchTagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85033B73216CA39D0089DD7A /* SearchTagTableViewCell.m */; };
+		85033B77216CA3B90089DD7A /* SearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85033B76216CA3B90089DD7A /* SearchResultTableViewCell.m */; };
+		85033B7B216CAE3E0089DD7A /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85033B7A216CAE3E0089DD7A /* SearchModel.m */; };
+		85033B7E216CB0060089DD7A /* SearchTagHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85033B7D216CB0060089DD7A /* SearchTagHeadView.m */; };
+		85033B84216CB94A0089DD7A /* search_icon_hot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85033B80216CB9480089DD7A /* search_icon_hot@3x.png */; };
+		85033B85216CB94A0089DD7A /* search_icon_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85033B81216CB9490089DD7A /* search_icon_history@2x.png */; };
+		85033B86216CB94A0089DD7A /* search_icon_hot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85033B82216CB9490089DD7A /* search_icon_hot@2x.png */; };
+		85033B87216CB94A0089DD7A /* search_icon_history@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85033B83216CB94A0089DD7A /* search_icon_history@3x.png */; };
 		85100B6C2141039A00AAB643 /* JXCategoryIndicatorLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85100B292141039A00AAB643 /* JXCategoryIndicatorLineView.m */; };
 		85100B6D2141039A00AAB643 /* JXCategoryIndicatorTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85100B2A2141039A00AAB643 /* JXCategoryIndicatorTriangleView.m */; };
 		85100B6E2141039A00AAB643 /* JXCategoryIndicatorImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85100B2C2141039A00AAB643 /* JXCategoryIndicatorImageView.m */; };
@@ -949,6 +960,24 @@
 		85033B62216C9B830089DD7A /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
 		85033B63216C9B830089DD7A /* SubLBXScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubLBXScanViewController.m; sourceTree = "<group>"; };
 		85033B64216C9B830089DD7A /* SubLBXScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubLBXScanViewController.h; sourceTree = "<group>"; };
+		85033B69216CA0E30089DD7A /* SKTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTag.m; sourceTree = "<group>"; };
+		85033B6A216CA0E30089DD7A /* SKTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTagButton.h; sourceTree = "<group>"; };
+		85033B6B216CA0E30089DD7A /* SKTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTagView.m; sourceTree = "<group>"; };
+		85033B6C216CA0E30089DD7A /* SKTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTag.h; sourceTree = "<group>"; };
+		85033B6D216CA0E30089DD7A /* SKTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTagView.h; sourceTree = "<group>"; };
+		85033B6E216CA0E30089DD7A /* SKTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTagButton.m; sourceTree = "<group>"; };
+		85033B72216CA39D0089DD7A /* SearchTagTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTagTableViewCell.h; sourceTree = "<group>"; };
+		85033B73216CA39D0089DD7A /* SearchTagTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTagTableViewCell.m; sourceTree = "<group>"; };
+		85033B75216CA3B90089DD7A /* SearchResultTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewCell.h; sourceTree = "<group>"; };
+		85033B76216CA3B90089DD7A /* SearchResultTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewCell.m; sourceTree = "<group>"; };
+		85033B79216CAE3E0089DD7A /* SearchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
+		85033B7A216CAE3E0089DD7A /* SearchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
+		85033B7C216CB0060089DD7A /* SearchTagHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTagHeadView.h; sourceTree = "<group>"; };
+		85033B7D216CB0060089DD7A /* SearchTagHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTagHeadView.m; sourceTree = "<group>"; };
+		85033B80216CB9480089DD7A /* search_icon_hot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_icon_hot@3x.png"; sourceTree = "<group>"; };
+		85033B81216CB9490089DD7A /* search_icon_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_icon_history@2x.png"; sourceTree = "<group>"; };
+		85033B82216CB9490089DD7A /* search_icon_hot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_icon_hot@2x.png"; sourceTree = "<group>"; };
+		85033B83216CB94A0089DD7A /* search_icon_history@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_icon_history@3x.png"; sourceTree = "<group>"; };
 		85100B252141039A00AAB643 /* JXCategoryIndicatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorCell.h; sourceTree = "<group>"; };
 		85100B262141039A00AAB643 /* JXCategoryIndicatorCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorCellModel.h; sourceTree = "<group>"; };
 		85100B272141039A00AAB643 /* JXCategoryIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryIndicatorView.h; sourceTree = "<group>"; };
@@ -1277,6 +1306,10 @@
 		8503386A216C93AA0089DD7A /* SearchController */ = {
 			isa = PBXGroup;
 			children = (
+				85033B7F216CB93C0089DD7A /* Images */,
+				85033B78216CAE270089DD7A /* Model */,
+				85033B68216CA0E30089DD7A /* SKTagView */,
+				85033B67216CA0DB0089DD7A /* View */,
 				85033B61216C9B830089DD7A /* SubLBXScan */,
 				8503386E216C94180089DD7A /* PWSearchViewController.h */,
 				8503386F216C94180089DD7A /* PWSearchViewController.m */,
@@ -2060,6 +2093,52 @@
 				85033B64216C9B830089DD7A /* SubLBXScanViewController.h */,
 			);
 			path = SubLBXScan;
+			sourceTree = "<group>";
+		};
+		85033B67216CA0DB0089DD7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				85033B72216CA39D0089DD7A /* SearchTagTableViewCell.h */,
+				85033B73216CA39D0089DD7A /* SearchTagTableViewCell.m */,
+				85033B75216CA3B90089DD7A /* SearchResultTableViewCell.h */,
+				85033B76216CA3B90089DD7A /* SearchResultTableViewCell.m */,
+				85033B7C216CB0060089DD7A /* SearchTagHeadView.h */,
+				85033B7D216CB0060089DD7A /* SearchTagHeadView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		85033B68216CA0E30089DD7A /* SKTagView */ = {
+			isa = PBXGroup;
+			children = (
+				85033B69216CA0E30089DD7A /* SKTag.m */,
+				85033B6A216CA0E30089DD7A /* SKTagButton.h */,
+				85033B6B216CA0E30089DD7A /* SKTagView.m */,
+				85033B6C216CA0E30089DD7A /* SKTag.h */,
+				85033B6D216CA0E30089DD7A /* SKTagView.h */,
+				85033B6E216CA0E30089DD7A /* SKTagButton.m */,
+			);
+			path = SKTagView;
+			sourceTree = "<group>";
+		};
+		85033B78216CAE270089DD7A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85033B79216CAE3E0089DD7A /* SearchModel.h */,
+				85033B7A216CAE3E0089DD7A /* SearchModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85033B7F216CB93C0089DD7A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				85033B81216CB9490089DD7A /* search_icon_history@2x.png */,
+				85033B83216CB94A0089DD7A /* search_icon_history@3x.png */,
+				85033B82216CB9490089DD7A /* search_icon_hot@2x.png */,
+				85033B80216CB9480089DD7A /* search_icon_hot@3x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		85100B232141039A00AAB643 /* JXCategoryView */ = {
@@ -2852,8 +2931,10 @@
 				853CED9E213D3BE7004A26E4 /* page_loading_00032.png in Resources */,
 				853CEDAE213D3BE7004A26E4 /* page_loading_00011.png in Resources */,
 				85CFFBB8213E961F00F91057 /* login_qq_icon@2x.png in Resources */,
+				85033B84216CB94A0089DD7A /* search_icon_hot@3x.png in Resources */,
 				853CEDA4213D3BE7004A26E4 /* page_loading_00012.png in Resources */,
 				8564028E21393B47009F9D57 /* nav_cart_s_30x30_@2x.png in Resources */,
+				85033B86216CB94A0089DD7A /* search_icon_hot@2x.png in Resources */,
 				853CED97213D3BE7004A26E4 /* page_loading_00026.png in Resources */,
 				853CED50213D0095004A26E4 /* global_back_10x25_@3x.png in Resources */,
 				8564028D21393B47009F9D57 /* nav_cat_s_30x30_@2x.png in Resources */,
@@ -2877,6 +2958,7 @@
 				8564029521393B47009F9D57 /* nav_cart_30x30_@3x.png in Resources */,
 				853CED4D213D0057004A26E4 /* global_nav_msg_white_20x18_@2x.png in Resources */,
 				853CEDA3213D3BE7004A26E4 /* page_loading_00017.png in Resources */,
+				85033B87216CB94A0089DD7A /* search_icon_history@3x.png in Resources */,
 				853CEDA8213D3BE7004A26E4 /* page_loading_00033.png in Resources */,
 				853CEDAB213D3BE7004A26E4 /* page_loading_00028.png in Resources */,
 				8564022021391B7E009F9D57 /* Assets.xcassets in Resources */,
@@ -2887,6 +2969,7 @@
 				85033B60216C9B5B0089DD7A /* COPYING in Resources */,
 				85CFFBB9213E961F00F91057 /* login_sina_icon@2x.png in Resources */,
 				853CEDAD213D3BE7004A26E4 /* page_loading_00015.png in Resources */,
+				85033B85216CB94A0089DD7A /* search_icon_history@2x.png in Resources */,
 				853CED9D213D3BE7004A26E4 /* page_loading_00024.png in Resources */,
 				8564027B21393B0C009F9D57 /* nav_home_30x30_@3x.png in Resources */,
 				853CEDBE213D3D3E004A26E4 /* MGJDETAIL_comment_star_half_14x13_@3x.png in Resources */,
@@ -2967,6 +3050,7 @@
 				85033AF8216C9B5B0089DD7A /* ZXDataMatrixDataBlock.m in Sources */,
 				85033B06216C9B5B0089DD7A /* ZXUPCAReader.m in Sources */,
 				85033AFA216C9B5B0089DD7A /* ZXDataMatrixVersion.m in Sources */,
+				85033B70216CA0E30089DD7A /* SKTagView.m in Sources */,
 				85033857216C895E0089DD7A /* ZMCustomGifHeader.m in Sources */,
 				85033ADD216C9B5B0089DD7A /* ZXPDF417BoundingBox.m in Sources */,
 				85033AD5216C9B5B0089DD7A /* ZXPDF417HighLevelEncoder.m in Sources */,
@@ -3033,6 +3117,7 @@
 				85100B812141039A00AAB643 /* JXCategoryNumberView.m in Sources */,
 				85033A89216C9B5A0089DD7A /* ZXDimension.m in Sources */,
 				851F1C7F213E475C00E2D2B6 /* TAAnimatedDotView.m in Sources */,
+				85033B71216CA0E30089DD7A /* SKTagButton.m in Sources */,
 				85033B47216C9B5B0089DD7A /* ZXAddressBookParsedResult.m in Sources */,
 				85033AAA216C9B5B0089DD7A /* ZXQRCodeDecoder.m in Sources */,
 				85033B54216C9B5B0089DD7A /* ZXWifiParsedResult.m in Sources */,
@@ -3055,6 +3140,7 @@
 				853CED56213D0B4F004A26E4 /* YYTableViewCell.m in Sources */,
 				C2CB295F213EDD85001C5CB1 /* UIButton+KJIndexPath.m in Sources */,
 				851F1C7E213E475C00E2D2B6 /* TAPageControl.m in Sources */,
+				85033B7B216CAE3E0089DD7A /* SearchModel.m in Sources */,
 				85100B6E2141039A00AAB643 /* JXCategoryIndicatorImageView.m in Sources */,
 				85033AEF216C9B5B0089DD7A /* ZXDataMatrixSymbolInfo144.m in Sources */,
 				851F1C80213E475C00E2D2B6 /* TAAbstractDotView.m in Sources */,
@@ -3084,6 +3170,7 @@
 				85033A86216C9B5A0089DD7A /* ZXErrors.m in Sources */,
 				8564025A21393220009F9D57 /* MLSHomeViewController.m in Sources */,
 				853CED5C213D1583004A26E4 /* HomeTableViewCell.m in Sources */,
+				85033B6F216CA0E30089DD7A /* SKTag.m in Sources */,
 				85033AC5216C9B5B0089DD7A /* ZXPerspectiveTransform.m in Sources */,
 				85033A96216C9B5B0089DD7A /* ZXAztecBinaryShiftToken.m in Sources */,
 				85100B702141039A00AAB643 /* JXCategoryIndicatorComponentView.m in Sources */,
@@ -3153,6 +3240,7 @@
 				85033B20216C9B5B0089DD7A /* ZXRSSExpandedPair.m in Sources */,
 				85033B17216C9B5B0089DD7A /* ZXAI01393xDecoder.m in Sources */,
 				85033868216C8AF50089DD7A /* XTAlertViewController.m in Sources */,
+				85033B74216CA39D0089DD7A /* SearchTagTableViewCell.m in Sources */,
 				85033AD6216C9B5B0089DD7A /* ZXPDF417BarcodeRow.m in Sources */,
 				85033AA0216C9B5B0089DD7A /* ZXQRCodeMaskUtil.m in Sources */,
 				8568858F213F81E500755013 /* NSObject+DLIntrospection.m in Sources */,
@@ -3226,6 +3314,7 @@
 				85033ADB216C9B5B0089DD7A /* ZXPDF417ECErrorCorrection.m in Sources */,
 				85033A99216C9B5B0089DD7A /* ZXAztecEncoder.m in Sources */,
 				85033B1F216C9B5B0089DD7A /* ZXAI013x0xDecoder.m in Sources */,
+				85033B7E216CB0060089DD7A /* SearchTagHeadView.m in Sources */,
 				85033B24216C9B5B0089DD7A /* ZXRSSDataCharacter.m in Sources */,
 				851F1C8A213E570D00E2D2B6 /* TGWebProgressLayer.m in Sources */,
 				85033B2C216C9B5B0089DD7A /* ZXITFReader.m in Sources */,
@@ -3274,6 +3363,7 @@
 				85033B11216C9B5B0089DD7A /* ZXRSSExpandedDecodedChar.m in Sources */,
 				85100B872141039A00AAB643 /* JXCategoryBaseView.m in Sources */,
 				85033B04216C9B5B0089DD7A /* ZXEAN8Reader.m in Sources */,
+				85033B77216CA3B90089DD7A /* SearchResultTableViewCell.m in Sources */,
 				85033B4D216C9B5B0089DD7A /* ZXSMTPResultParser.m in Sources */,
 				85033ABF216C9B5B0089DD7A /* ZXCharacterSetECI.m in Sources */,
 				85688598213F847C00755013 /* NSMutableArray+Safe.m in Sources */,

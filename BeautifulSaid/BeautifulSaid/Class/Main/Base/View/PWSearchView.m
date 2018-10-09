@@ -29,11 +29,7 @@
 
 
 - (void)setupViews {
-    
-    NSLog(@"isEditing == %d",_isEditing);
-    
-    
-    
+
     self.searchText = [[UITextField alloc] init];
     [self addSubview:self.searchText];
     self.searchText.layer.cornerRadius = 5.0f;
@@ -45,19 +41,19 @@
     [self.searchText setValue:[UIColor colorWithRed:176 / 255.0f green:176 / 255.0f blue: 176 / 255.0f alpha:1.0f]
                    forKeyPath:@"_placeholderLabel.textColor"];
     self.searchText.tintColor = [UIColor colorWithRed:98 / 255.0f green:97 / 255.0f blue: 101 / 255.0f alpha:1.0f];
-    self.searchText.backgroundColor = [UIColor colorWithRed:176 / 255.0f green:176 / 255.0f blue: 176 / 255.0f alpha:1.0f];
+    self.searchText.backgroundColor = LRRGBColor(242, 245, 248);
     [self.searchText addTarget:self action:@selector(textFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
 
     
     self.searchBtn = [[UIButton alloc] init];
-    self.searchBtn.backgroundColor = [UIColor orangeColor];
+//    self.searchBtn.backgroundColor = [UIColor orangeColor];
     [self.searchBtn addTarget:self action:@selector(searchBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.searchBtn];
     
     
     self.SweepBtn = [[UIButton alloc] init];
     [self.SweepBtn setImage:[UIImage imageNamed:@"homepage_scan_icon"] forState:UIControlStateNormal];
-    self.SweepBtn.backgroundColor = [UIColor redColor];
+//    self.SweepBtn.backgroundColor = [UIColor redColor];
     [self.SweepBtn addTarget:self action:@selector(SweepBtnClick) forControlEvents:UIControlEventTouchUpInside];
 
     [self addSubview:self.SweepBtn];
@@ -66,7 +62,9 @@
     self.canBtn = [[UIButton alloc] init];
     [self addSubview:self.canBtn];
     self.canBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-    self.canBtn.backgroundColor = [UIColor redColor];
+    self.canBtn.adjustsImageWhenHighlighted = NO;
+//    self.canBtn.backgroundColor = [UIColor redColor];
+    [self.canBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [self.canBtn addTarget:self action:@selector(dismissButtonWasPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.canBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.searchText.mas_centerY);
@@ -175,12 +173,10 @@
 }
 
 - (void)dismissButtonWasPressed:(UIButton *)sender {
-//    [self.searchText resignFirstResponder];
-//    if ([self.delegate respondsToSelector:@selector(dismissButtonWasPressedForSearchDetailView:)]) {
-//        [self.delegate dismissButtonWasPressedForSearchDetailView:self];
-//    }
-    
-    
+    [self.searchText resignFirstResponder];
+    if ([self.delegate respondsToSelector:@selector(dismissButtonWasPressedForSearchView:)]) {
+        [self.delegate dismissButtonWasPressedForSearchView:self];
+    }
 }
 
 

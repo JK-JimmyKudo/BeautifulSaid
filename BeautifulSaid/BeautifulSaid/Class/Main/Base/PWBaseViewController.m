@@ -52,6 +52,7 @@
     return _searchView;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -102,5 +103,14 @@
     
 }
 
+- (void)dismissButtonWasPressedForSearchView:(PWSearchView *)searchView{}
 
+
+- (void)searchButtonWasPressedForSearchView:(PWSearchView *)searchView{}
+
+- (void)textFieldEditingChangedForSearchView:(PWSearchView *)searchView{}
+
+- (void)textFieldDidBeginEditingChangedForSearchView:(PWSearchView *)searchView{}
+
+- (void)textFieldShouldBeginEditingSearchView:(PWSearchView *)searchView{}
 @end

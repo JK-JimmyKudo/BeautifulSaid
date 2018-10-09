@@ -52,14 +52,12 @@ static NSString *HeadInderfier = @"HomeHeadView";
 
 - (void)textFieldShouldBeginEditingSearchView:(PWSearchView *)searchView
 {
-    
     PWSearchViewController *SearchView = [[PWSearchViewController alloc] init];
     [self.navigationController pushViewController:SearchView animated:YES];
 }
 
 - (void)searchButtonWasPressedForSearchView:(PWSearchView *)searchView
 {
-
     SubLBXScanViewController *ScanView = [[SubLBXScanViewController alloc] init];
     [self.navigationController pushViewController:ScanView animated:YES];
     NSLog(@"跳转扫码界面");
