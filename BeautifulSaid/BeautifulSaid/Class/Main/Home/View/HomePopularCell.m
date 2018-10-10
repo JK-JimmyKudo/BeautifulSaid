@@ -54,7 +54,7 @@ static NSString *inderfier = @"HomeChildCell";
         flowLayout.minimumLineSpacing = 0;
         flowLayout.minimumInteritemSpacing = 0;
         self.collectionView = [[YYCollectionView alloc] initWithFrame:CGRectMake(0, 35, kScreenWidth, 360) collectionViewLayout:flowLayout];
-        self.collectionView.backgroundColor = [UIColor redColor];
+        self.collectionView.backgroundColor = [UIColor whiteColor];
         self.collectionView.delegate = self;
         self.collectionView.dataSource = self;
         
@@ -478,9 +478,12 @@ static NSString *inderfier = @"HomeChildCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    //    MLSLoginViewController *vc = [[MLSLoginViewController alloc] init];
-    //    [self.navigationController presentViewController:vc animated:YES completion:nil];
+    HomePopularModel *model = [self.listArray safeObjectAtIndex:indexPath.item];
+    NSLog(@"link === %@",model.link);
+    WHWebViewController *whWebVC = [[WHWebViewController alloc] init];
+    whWebVC.urlString = model.link;
+    whWebVC.webTitle = model.title;
+    [self.viewController.navigationController pushViewController:whWebVC animated:YES];
 }
 
 @end

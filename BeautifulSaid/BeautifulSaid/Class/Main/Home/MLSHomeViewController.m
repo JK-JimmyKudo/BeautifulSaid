@@ -39,7 +39,7 @@ static NSString *HeadInderfier = @"HomeHeadView";
     [super viewDidLoad];
     [self setupMainView];
     [self setupSeachView];    
-    [self.searchView.canBtn setImage:[UIImage imageNamed:@"global_nav_msg_white_20x18_"] forState:UIControlStateNormal];
+    [self.searchView.canBtn setImage:[UIImage imageNamed:@"global_nav_msg_white"] forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -70,7 +70,7 @@ static NSString *HeadInderfier = @"HomeHeadView";
 //    flowLayout.itemSize = CGSizeMake((kScreenWidth - 30)/2, kScreenWidth *9/16 + 110);
 
     self.m_collectionView = [[YYCollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) collectionViewLayout:flowLayout];
-    self.m_collectionView.backgroundColor = [UIColor blueColor];
+    self.m_collectionView.backgroundColor = [UIColor whiteColor];
     self.m_collectionView.delegate = self;
     self.m_collectionView.dataSource = self;
     
@@ -86,9 +86,11 @@ static NSString *HeadInderfier = @"HomeHeadView";
     WEAKSELF;
     
     
-//    self.m_collectionView.mj_header = [ZMCustomGifHeader headerWithRefreshingBlock:^{
-//
-//    }];
+    self.m_collectionView.mj_header = [ZMCustomGifHeader headerWithRefreshingBlock:^{
+
+        
+        
+    }];
     
     
 //    self.m_collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
@@ -199,7 +201,15 @@ static NSString *HeadInderfier = @"HomeHeadView";
     CGFloat maxAlphaOffset = 200;
     CGFloat offset = scrollView.contentOffset.y;
     CGFloat alpha = (offset - minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
-    self.searchView.backgroundColor = [[UIColor whiteColor]colorWithAlphaComponent:alpha];;
+    self.searchView.backgroundColor = [[UIColor whiteColor]colorWithAlphaComponent:alpha];
+//    
+//    NSLog(@"alpha == %f",alpha);
+    
+    if (alpha >=1) {
+        [self.searchView.canBtn setImage:[UIImage imageNamed:@"global_nav_msg"] forState:UIControlStateNormal];
+    }else{
+        [self.searchView.canBtn setImage:[UIImage imageNamed:@"global_nav_msg_white"] forState:UIControlStateNormal];
+    }
 }
 
 -(NSMutableArray *) m_rowsArray{

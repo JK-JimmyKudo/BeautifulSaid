@@ -16,7 +16,7 @@
 
 - (void)searchButtonWasPressedForSearchView:(PWSearchView *)searchView;
 
-- (void)textFieldEditingChangedForSearchView:(PWSearchView *)searchView;
+- (void)textFieldEditingChangedForSearchView:(PWSearchView *)searchView TextFiledStr:(NSString *)text;
 
 - (void)textFieldDidBeginEditingChangedForSearchView:(PWSearchView *)searchView;
 

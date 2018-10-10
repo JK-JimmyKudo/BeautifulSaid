@@ -10,7 +10,7 @@
 
 @interface PWSearchView ()<UITextFieldDelegate>
 
-
+@property (nonatomic,copy) NSString *textFiledStr;
 @end
 
 @implementation PWSearchView
@@ -99,7 +99,7 @@
 
 - (void)setupTextFieldLeftView {
     UIImageView *searchImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    searchImageView.image = [UIImage imageNamed:@"homepage_search_icon"];
+    searchImageView.image = [UIImage imageNamed:@"global_icon_search"];
     searchImageView.contentMode = UIViewContentModeCenter;
     self.searchText.leftView = searchImageView;
     self.searchText.leftViewMode = UITextFieldViewModeAlways;
@@ -109,19 +109,27 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//    [self.searchText resignFirstResponder];
-//    if ([self.delegate respondsToSelector:@selector(searchButtonWasPressedForSearchDetailView:)]) {
+    
+    [self.searchText resignFirstResponder];
+
+    //    if ([self.delegate respondsToSelector:@selector(searchButtonWasPressedForSearchDetailView:)]) {
 //        [self.delegate searchButtonWasPressedForSearchDetailView:self];
 //    }
     return YES;
 }
 
-- (void)textFieldEditingChanged:(UITextField *)sender {
-//    if ([self.delegate respondsToSelector:@selector(textFieldEditingChangedForSearchDetailView:)]) {
-//        [self.delegate textFieldEditingChangedForSearchDetailView:self];
-//    }
-//
-    if (sender.text.length <= 0) {
+- (void)textFieldEditingChanged:(UITextField *)TextField {
+    
+    NSLog(@"UITextField === %@",TextField.text);
+    
+    self.textFiledStr = TextField.text;
+    
+    if ([self.delegate respondsToSelector:@selector(textFieldEditingChangedForSearchView:TextFiledStr:)]) {
+        [self.delegate textFieldEditingChangedForSearchView:self TextFiledStr:self.textFiledStr];
+    }
+
+    
+    if (TextField.text.length <= 0) {
         self.SweepBtn.hidden = NO;
         
     }else{
@@ -129,16 +137,7 @@
     }
 }
 
-//点击这个方法 就相当于点击了一个按钮，在这里做自己想做的
--(void)textFieldDidBeginEditing:(UITextField*)textField
-{
-    
-//    if (self.delegate && [self.delegate respondsToSelector:@selector(textFieldDidBeginEditingChangedForSearchView:)]) {
-//        [self.delegate textFieldDidBeginEditingChangedForSearchView:self];
-//    }
-//       [textField resignFirstResponder];
-    NSLog(@"string");
-}
+
 
 //- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
 //

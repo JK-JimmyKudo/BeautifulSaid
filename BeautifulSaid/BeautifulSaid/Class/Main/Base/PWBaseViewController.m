@@ -23,7 +23,7 @@
     if (!_navView) {
         ZMNavView *navView = [[ZMNavView alloc] init];
         [self.view addSubview:navView];
-        navView.backgroundColor = [MLSColor whiteColor];
+        navView.backgroundColor = [PWColor whiteColor];
         self.navView = navView;
         [self.navView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.mas_equalTo(0);

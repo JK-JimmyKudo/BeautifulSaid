@@ -42,7 +42,6 @@ static NSString *inderfier = @"HomeCollectionViewCell";
         _collectionView.dataSource = self;
         [_collectionView registerClass:[HomeCollectionViewCell class] forCellWithReuseIdentifier: inderfier];
         [self addSubview:self.collectionView];
-        
     }
     return self;
 }

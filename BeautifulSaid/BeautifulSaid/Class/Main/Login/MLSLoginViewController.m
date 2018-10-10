@@ -53,7 +53,7 @@
 
 -(void)setupUI{
     YYLabel *label = [[YYLabel alloc] init];
-    label.textColor = [MLSColor colorWithRed:126 withGreen:126 withBlue:126 withAlpha:1];
+    label.textColor = [PWColor colorWithRed:126 withGreen:126 withBlue:126 withAlpha:1];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"美丽说账号";
     label.font = [UIFont systemFontOfSize:16];
@@ -69,7 +69,7 @@
     self.IPTextField = [[UITextField alloc] init];
     self.IPTextField.placeholder = @"昵称/邮箱/手机";
     self.IPTextField.textAlignment = NSTextAlignmentCenter;
-    self.IPTextField.textColor = [MLSColor appTextFieldColor];
+    self.IPTextField.textColor = [PWColor appTextFieldColor];
     self.IPTextField.font = [UIFont systemFontOfSize:25];
     [self.view addSubview:self.IPTextField];
     [self.IPTextField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -81,7 +81,7 @@
     
     
     UIView *line=[[UIView alloc]init];
-    line.backgroundColor=[MLSColor appTextFieldColor];
+    line.backgroundColor=[PWColor appTextFieldColor];
     [self.IPTextField addSubview:line];
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.IPTextField);
@@ -93,7 +93,7 @@
     
     YYLabel *passLabel = [[YYLabel alloc] init];
     passLabel.textAlignment = NSTextAlignmentCenter;
-    passLabel.textColor = [MLSColor colorWithRed:126 withGreen:126 withBlue:126 withAlpha:1];
+    passLabel.textColor = [PWColor colorWithRed:126 withGreen:126 withBlue:126 withAlpha:1];
     passLabel.text = @"密码";
     passLabel.font = [UIFont systemFontOfSize:16];
     [self.view addSubview:passLabel];
@@ -108,7 +108,7 @@
     self.PSTextField = [[UITextField alloc] init];
     self.PSTextField.placeholder = @"输入密码";
     self.PSTextField.textAlignment = NSTextAlignmentCenter;
-    self.PSTextField.textColor = [MLSColor appTextFieldColor];
+    self.PSTextField.textColor = [PWColor appTextFieldColor];
     self.PSTextField.font = [UIFont systemFontOfSize:25];
     [self.view addSubview:self.PSTextField];
     [self.PSTextField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -120,7 +120,7 @@
     
     {
         UIView *line=[[UIView alloc]init];
-        line.backgroundColor=[MLSColor appTextFieldColor];
+        line.backgroundColor=[PWColor appTextFieldColor];
         [self.PSTextField addSubview:line];
         [line mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.PSTextField);
@@ -152,7 +152,7 @@
 //    210
     
     self.loginLabel = [[YYLabel alloc] init];
-    self.loginLabel.backgroundColor = [MLSColor colorWithRed:210 withGreen:210 withBlue:210 withAlpha:1];
+    self.loginLabel.backgroundColor = [PWColor colorWithRed:210 withGreen:210 withBlue:210 withAlpha:1];
     self.loginLabel.text = @"登录";
     self.loginLabel.textColor = [UIColor whiteColor];
     self.loginLabel.layer.masksToBounds = YES;

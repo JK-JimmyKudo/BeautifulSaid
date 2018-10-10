@@ -23,7 +23,7 @@
             
         self.imageView = [[FLAnimatedImageView alloc] init];
         [self.contentView addSubview:self.imageView];
-        self.imageView.backgroundColor = [UIColor orangeColor];
+        self.imageView.backgroundColor = [UIColor whiteColor];
         [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(76);
             make.top.mas_equalTo(0);

@@ -107,8 +107,7 @@ static NSString *identyfy = @"SearchTagTableViewCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-    NSLog(@"self.tagHeight === %f",self.tagHeight);
+//    NSLog(@"self.tagHeight === %f",self.tagHeight);
     
     return self.tagHeight;
 //    return 200;
@@ -165,9 +164,10 @@ static NSString *identyfy = @"SearchTagTableViewCell";
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (tableView == self.searchTagTableView) {
     
+    if (tableView == self.searchTagTableView) {
         SearchTagTableViewCell *cell = [SearchTagTableViewCell setupSearchTagViewTableViewCell:tableView];
+        cell.tagView.delegate = self;
         self.tagHeight = 0;
         if (indexPath.section == 0) {
             [cell configureCell:cell atIndexPath:indexPath dataSource:_tags tagHeight:^(CGFloat TagHeight) {
@@ -192,6 +192,17 @@ static NSString *identyfy = @"SearchTagTableViewCell";
     SearchResultTableViewCell *cell = [SearchResultTableViewCell setupSearchResultTableViewCell:tableView];
     return cell;
 }
+
+- (void)tagButtonDidSelectedForTagTitle:(NSString *)title{
+    NSLog(@" title == %@",title);
+}
+
+
+- (void)textFieldEditingChangedForSearchView:(PWSearchView *)searchView TextFiledStr:(NSString *)text{
+    
+    NSLog(@"text === %@",text);
+}
+
 
 - (void)dismissButtonWasPressedForSearchView:(PWSearchView *)searchView
 {

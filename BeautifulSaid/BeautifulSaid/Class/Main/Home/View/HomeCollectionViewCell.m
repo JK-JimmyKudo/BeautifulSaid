@@ -94,7 +94,7 @@
 
 -(void) configHomeCollectionModel:(HomeModels *)model{
     
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:model.image] placeholderImage:nil];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:model.image] placeholderImage:[UIImage imageNamed:@"global_placeholder"]];
     self.des_label.text = model.desc;
     self.discountPrice_label.text = [NSString stringWithFormat:@"¥%@",model.discountPrice];
     self.collectNum_label.text = model.collectNum;

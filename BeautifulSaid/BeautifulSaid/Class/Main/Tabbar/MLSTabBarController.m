@@ -13,7 +13,7 @@
 #import "MLSShopViewController.h"
 #import "MLSMEViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
-#import "MLSColor.h"
+#import "PWColor.h"
 #import "YYFPSLabel.h"
 
 
@@ -75,9 +75,9 @@
     //设置item的按钮
     navc.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:[[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:selectedImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     //设置按钮的未选中的颜色
-    [[UITabBarItem appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName:[MLSColor colorWithRed:136 withGreen:134 withBlue:135 withAlpha:1],NSFontAttributeName:[UIFont systemFontOfSize:11 ]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName:[PWColor colorWithRed:136 withGreen:134 withBlue:135 withAlpha:1],NSFontAttributeName:[UIFont systemFontOfSize:11 ]} forState:UIControlStateNormal];
     //设置选中的颜色
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[MLSColor colorWithRed:255 withGreen:0 withBlue:90 withAlpha:1],NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[PWColor colorWithRed:255 withGreen:0 withBlue:90 withAlpha:1],NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateSelected];
     
 //    [navc.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, 4)];
     navc.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, 2);

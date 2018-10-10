@@ -14,6 +14,8 @@
 #import "HobbyListView.h"
 #import "PowerListView.h"
 #import "HomeModels.h"
+#import "PWSearchViewController.h"
+#import "SubLBXScanViewController.h"
 
 static const CGFloat JXTableHeaderViewHeight = 520;
 static const CGFloat JXheightForHeaderInSection = 50;
@@ -52,8 +54,7 @@ static const CGFloat JXheightForHeaderInSection = 50;
     
     [self setupUI];
     [self searchView];
-//    self.searchView.backgroundColor = [UIColor whiteColor];
-    [self.searchView.canBtn setTitle:@"取消" forState:UIControlStateNormal];
+     [self.searchView.canBtn setImage:[UIImage imageNamed:@"global_nav_msg"] forState:UIControlStateNormal];
     
     [self getRecommendData];
 }
@@ -83,7 +84,7 @@ static const CGFloat JXheightForHeaderInSection = 50;
     self.categoryView.backgroundColor = [UIColor whiteColor];
     self.categoryView.delegate = self;
     self.categoryView.titleSelectedColor = [UIColor blackColor];
-    self.categoryView.titleColor = [MLSColor appTextFieldColor];
+    self.categoryView.titleColor = [PWColor appTextFieldColor];
     self.categoryView.titleColorGradientEnabled = YES;
     self.categoryView.titleLabelZoomEnabled = YES;
     self.categoryView.titleLabelZoomEnabled = YES;
@@ -98,7 +99,7 @@ static const CGFloat JXheightForHeaderInSection = 50;
 
 //    _pagingView.mainTableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(headerRefresh))
     
-    _pagingView.mainTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+    _pagingView.mainTableView.mj_header = [ZMCustomGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
     
     
     self.categoryView.contentScrollView = self.pagingView.listContainerView.collectionView;
@@ -109,7 +110,9 @@ static const CGFloat JXheightForHeaderInSection = 50;
 
 -(void)headerRefresh{
     NSLog(@"headerRefresh");
-    [_pagingView.mainTableView.mj_header endRefreshing];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_pagingView.mainTableView.mj_header endRefreshing];
+    });
 }
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
@@ -162,6 +165,21 @@ static const CGFloat JXheightForHeaderInSection = 50;
 
     self.navigationController.interactivePopGestureRecognizer.enabled = (index == 0);
     
+}
+
+#pragma mark -- 搜索框代理
+
+- (void)textFieldShouldBeginEditingSearchView:(PWSearchView *)searchView
+{
+    PWSearchViewController *SearchView = [[PWSearchViewController alloc] init];
+    [self.navigationController pushViewController:SearchView animated:YES];
+}
+
+- (void)searchButtonWasPressedForSearchView:(PWSearchView *)searchView
+{
+    SubLBXScanViewController *ScanView = [[SubLBXScanViewController alloc] init];
+    [self.navigationController pushViewController:ScanView animated:YES];
+    NSLog(@"跳转扫码界面");
 }
 
 - (void)didReceiveMemoryWarning {

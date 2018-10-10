@@ -45,7 +45,7 @@
         long rowIndex = idx / perRowItemCount;
         HeadViewCell *headView = [[HeadViewCell alloc]init];
         headView.layer.borderWidth = 0.5;
-        headView.layer.borderColor = [MLSColor appTextFieldColor].CGColor;
+        headView.layer.borderColor = [PWColor appTextFieldColor].CGColor;
         [self addSubview:headView];
 //        headView.backgroundColor = [UIColor orangeColor];
 //        headView.hidden = NO;
@@ -62,7 +62,7 @@
     
     UIView *lineView = [[UIView alloc] init];
     [self addSubview:lineView];
-    lineView.backgroundColor = [MLSColor appTextFieldColor];
+    lineView.backgroundColor = [PWColor appTextFieldColor];
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);

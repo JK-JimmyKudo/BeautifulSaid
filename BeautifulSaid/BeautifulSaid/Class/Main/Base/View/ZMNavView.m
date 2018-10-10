@@ -20,7 +20,7 @@
 - (UIView *)mainView{
     if (!_mainView) {
         _mainView = [UIView new];
-        _mainView.backgroundColor = [MLSColor clearColor];
+        _mainView.backgroundColor = [PWColor clearColor];
         [self addSubview:_mainView];
         [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.bottom.mas_equalTo(0);
@@ -36,9 +36,10 @@
         _leftButton.titleLabel.font = [UIFont systemFontOfSize:15];
         _leftButton.adjustsImageWhenHighlighted = NO;
         _leftButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-        [_leftButton setTitleColor:[MLSColor blackColor] forState:UIControlStateNormal];
+        [_leftButton setTitleColor:[PWColor blackColor] forState:UIControlStateNormal];
         [self.mainView addSubview:_leftButton];
         [_leftButton addTarget:self action:@selector(clickLeftButton) forControlEvents:UIControlEventTouchUpInside];
+        [_leftButton setImage:[UIImage imageNamed:@"btn_navigationbar_back"] forState:UIControlStateNormal];
         [_leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(0);
             make.width.mas_equalTo(50);
@@ -55,7 +56,7 @@
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
         rightButton.titleLabel.font = [UIFont systemFontOfSize:15];
         rightButton.adjustsImageWhenHighlighted = NO;
-        [rightButton setTitleColor:[MLSColor blackColor] forState:UIControlStateNormal];
+        [rightButton setTitleColor:[PWColor blackColor] forState:UIControlStateNormal];
         [self.mainView addSubview:rightButton];
         self.rightButton = rightButton;
         [_rightButton addTarget:self action:@selector(clickRightButton) forControlEvents:UIControlEventTouchUpInside];
@@ -75,7 +76,7 @@
         //中间按钮
         UIButton *centerButton = [UIButton buttonWithType:UIButtonTypeCustom];
         centerButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
-        [centerButton setTitleColor:[MLSColor blackColor] forState:UIControlStateNormal];
+        [centerButton setTitleColor:[PWColor blackColor] forState:UIControlStateNormal];
         centerButton.adjustsImageWhenHighlighted = NO;
         [self.mainView addSubview:centerButton];
         self.centerButton = centerButton;
@@ -95,7 +96,7 @@
     if (!_lineLabel) {
         //底部分割线
         UILabel *lineLabel = [[UILabel alloc] init];
-        lineLabel.backgroundColor = [MLSColor colorWithHexString:@"0xDCDCDC" alpha:1.0];
+        lineLabel.backgroundColor = [PWColor colorWithHexString:@"0xDCDCDC" alpha:1.0];
         self.lineLabel = lineLabel;
         [self.mainView addSubview:lineLabel];
         [self.lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,7 +110,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [MLSColor whiteColor];
+        self.backgroundColor = [PWColor whiteColor];
         [self setupUI];
     }
     return self;
