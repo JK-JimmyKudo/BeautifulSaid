@@ -6,14 +6,14 @@
 //  Copyright © 2018年 BeautifulSaid. All rights reserved.
 //
 
-#import "MLSLoginViewController.h"
+#import "PWLoginViewController.h"
 #import "YCMenuView.h"
-#import "hhhViewController.h"
+#import "PWGDViewController.h"
 
 #define kMyNavi  (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController
 
 
-@interface MLSLoginViewController ()
+@interface PWLoginViewController ()
 
 @property(nonatomic,strong)NSArray *arr;
 
@@ -34,7 +34,7 @@
 
 @end
 
-@implementation MLSLoginViewController
+@implementation PWLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

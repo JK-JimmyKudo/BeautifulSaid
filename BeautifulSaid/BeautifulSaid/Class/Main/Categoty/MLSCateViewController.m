@@ -212,7 +212,6 @@ static const CGFloat JXheightForHeaderInSection = 50;
     /*
      http://d.meilishuo.com/detail/mls/v1/main?_ab=3400&_app=mls&_at=0dcd22be527a6a62&_atype=iphone&_av=940&_channel=NILAppStore&_did=24B25A27-8C3D-4CA7-8BC5-A49766AD513F&_fs=NILAppStore940&_isRoot=0&_lang=zh_CN&_network=2&_saveMode=0&_sdklevel=10.3.1&_swidth=1242&_t=1536226900&_version=9.4.0.3400&minfo=iPhone9%2C2&tid-fpid=RQ0qlhTONdQdtabXlTrdov&tid-token=k5my3vtMSXOpOGEcbbNhbg&acm=3.ms.0_4_1m6634i.0.13385-26167-69004.ni0a4r2RluivD.sd_117-t_-lc_1&iid=1m6634i&itemInfoId=1m6634i
      */
-    
 }
 -(NSMutableArray *)rowsArray{
     if (!_rowsArray) {

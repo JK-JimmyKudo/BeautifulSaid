@@ -8,7 +8,7 @@
 
 #import "PWBaseViewController.h"
 
-@interface MLSLoginViewController : PWBaseViewController
+@interface PWLoginViewController : PWBaseViewController
 
 @property (nonatomic,assign) NSInteger selectedIndex;
 

@@ -47,6 +47,20 @@ static NSString *inderfier = @"HomeChildCell";
         }];
         
         
+        self.moreLabel = [[YYLabel alloc]init];
+        [self.contentView addSubview:self.moreLabel];
+        self.moreLabel.text = @"查看更多>";
+        self.moreLabel.textAlignment = NSTextAlignmentRight;
+        self.moreLabel.font = [UIFont systemFontOfSize:15];
+        self.moreLabel.textColor = [PWColor appLabeTextlColor];
+        [self.moreLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(-20);
+            make.width.mas_equalTo(100);
+            make.top.mas_equalTo(self.titleLabel);
+            make.height.mas_equalTo(self.titleLabel);
+        }];
+        
+        
         
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;

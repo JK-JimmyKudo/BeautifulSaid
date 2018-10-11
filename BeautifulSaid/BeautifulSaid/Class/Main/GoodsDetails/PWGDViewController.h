@@ -8,6 +8,6 @@
 
 #import "PWBaseViewController.h"
 
-@interface hhhViewController : PWBaseViewController
+@interface PWGDViewController : PWBaseViewController
 
 @end

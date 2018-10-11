@@ -19,7 +19,7 @@
 #import "YYCollectionViewcell.h"
 #import "WHWebViewController.h"
 #import "AppDelegate.h"
-#import "MLSLoginViewController.h"
+#import "PWLoginViewController.h"
 #import "UIView+Extension.h"
 #import "UIControl+BtnQuickLimit.h"
 #import "NSArray+Safe.h"
@@ -29,6 +29,7 @@
 #import "UITableView+KFRefresh.h"
 #import "ZMCustomGifHeader.h"
 #import "ZMCustomGifFooter.h"
+#import "SGPagingView.h"
 
 #import <YYKit/YYKit.h>
 #import <MJRefresh/MJRefresh.h>

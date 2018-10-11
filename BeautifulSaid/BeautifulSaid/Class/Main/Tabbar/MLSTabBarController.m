@@ -94,7 +94,7 @@
     
     if ( [viewController.tabBarItem.title isEqualToString:@"我"]) {
         
-        MLSLoginViewController * login = [[MLSLoginViewController alloc] init];
+        PWLoginViewController * login = [[PWLoginViewController alloc] init];
         
         [self presentViewController:login animated:YES completion:nil];
         
@@ -118,7 +118,6 @@
     NSURL *soundURL = [NSURL fileURLWithPath:path];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL,&soundID);
     AudioServicesPlaySystemSound(soundID);
-    
 }
 - (void)animationWithIndex:(NSInteger) index {
     if (self.selectedIndex == index) {

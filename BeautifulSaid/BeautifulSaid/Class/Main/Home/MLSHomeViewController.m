@@ -10,10 +10,10 @@
 #import "HomeTableViewCell.h"
 #import "HomeCollectionViewCell.h"
 #import "HomeModels.h"
-#import "MLSLoginViewController.h"
+#import "PWLoginViewController.h"
 #import "HomePopularCell.h"
 #import "HomeHeadView.h"
-#import "hhhViewController.h"
+#import "PWGDViewController.h"
 #import "PWSearchViewController.h"
 #import "SubLBXScanViewController.h"
 
@@ -189,7 +189,7 @@ static NSString *HeadInderfier = @"HomeHeadView";
 //    [self.navigationController presentViewController:vc animated:YES completion:nil];
     
     
-    hhhViewController *vc = [[hhhViewController alloc] init];
+    PWGDViewController *vc = [[PWGDViewController alloc] init];
 
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -227,6 +227,9 @@ static NSString *HeadInderfier = @"HomeHeadView";
     
     [ZMNetworkHelper requestGETWithRequestURL:urlStr parameters:nil success:^(id responseObject) {
         NSArray *rows  = responseObject[@"data"][@"rows"];
+        
+//        NSLog(@" ==== rows===%@",rows);
+        
         for ( NSDictionary *dict in rows) {
             HomeModels *model = [HomeModels modelWithDictionary:dict];
             [self.m_rowsArray addObject:model];
