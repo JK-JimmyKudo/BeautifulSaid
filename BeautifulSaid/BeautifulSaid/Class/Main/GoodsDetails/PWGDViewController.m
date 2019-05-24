@@ -20,6 +20,8 @@
 
 @property (nonatomic,strong) UITableView *tableView;
 
+@property (nonatomic,strong) NSDictionary *resultDic;
+
 @end
 
 
@@ -31,12 +33,9 @@
 
     [self setupNavView];
     [self.navView.centerButton setTitle:@"我的订单" forState:UIControlStateNormal];
-    
-    
-    
-    
-    [self setupLoadData];
     [self setupUI];
+    [self setupLoadData];
+
 }
 
 -(void)setupUI{
@@ -73,8 +72,10 @@
         cell.backgroundColor = LRRandomColor;
     }
     
-    self.GDHeadView = [[PWGDHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 300)];
+    self.GDHeadView = [[PWGDHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH *9/16 + 200 + 300)];
     self.GDHeadView.backgroundColor = [UIColor redColor];
+    
+    [self.GDHeadView loadHeadViewData:self.resultDic];
     
     if (indexPath.section == 0 && indexPath.row == 0) {
         [cell.contentView addSubview:self.GDHeadView];
@@ -86,8 +87,8 @@
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if (indexPath.section == 0 && indexPath.row == 0) {
-        
-        return 500;
+
+        return SCREEN_WIDTH *9/16 + 200 + 300;
     }
     return 200;
 }
@@ -119,8 +120,11 @@
     
     [ZMNetworkHelper requestGETWithRequestURL:url parameters:nil success:^(id responseObject) {
        
-        NSLog(@"responseObject ==== %@",responseObject);
+//        NSLog(@"responseObject ==== %@",responseObject);
+        self.resultDic = responseObject[@"result"];
+        [self.GDHeadView loadHeadViewData:self.resultDic];
         
+        [self.tableView reloadData];
     } failure:^(NSError *error) {
         
     }];

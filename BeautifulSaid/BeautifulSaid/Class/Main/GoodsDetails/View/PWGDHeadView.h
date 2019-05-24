@@ -10,4 +10,8 @@
 
 @interface PWGDHeadView : UIView
 
+
+-(void)loadHeadViewData:(NSDictionary *)dict;
+
+
 @end

@@ -106,7 +106,7 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-    CGFloat viewWidth = SCREEN_WIDTH * 0.9 - 2*PAGE_OFFSET;
+    CGFloat viewWidth = SCREEN_WIDTH * 0.8 - 2*PAGE_OFFSET;
     if (view == nil) {
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, self.height)];
         view.backgroundColor = [UIColor clearColor];

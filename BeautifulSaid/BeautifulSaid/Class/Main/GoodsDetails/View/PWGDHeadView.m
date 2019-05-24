@@ -14,6 +14,9 @@
 
 @property (nonatomic,strong) NSMutableArray *imagesGroup;
 
+@property (nonatomic,strong) YYLabel *titlelabel;
+@property (nonatomic,strong) YYLabel *pricelabel;
+
 @end
 
 @implementation PWGDHeadView
@@ -22,12 +25,38 @@
     
     if (self = [super initWithFrame:frame]) {
         
-        self.carouselView = [[FLCycleCarouselView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 300)];
+        self.carouselView = [[FLCycleCarouselView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH *9/16 + 200)];
         self.carouselView.delegate = self;
         self.carouselView.cornerRadius = 5;
         self.carouselView.autoScrollTime = 0.2;
         self.carouselView.placeholder = @"icon_loading_banner";
         [self addSubview:self.carouselView];
+        
+        self.titlelabel = [[YYLabel alloc] init];
+        self.titlelabel.textColor = [UIColor blackColor];
+        self.titlelabel.backgroundColor = [UIColor orangeColor];
+        self.titlelabel.font = [UIFont systemFontOfSize:18];
+        [self addSubview:self.titlelabel];
+        [self.titlelabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+            make.top.mas_equalTo(self.carouselView.mas_bottom).offset(10);
+//            make.height.mas_equalTo(50);
+        }];
+        
+        
+        self.pricelabel = [[YYLabel alloc] init];
+        self.pricelabel.textColor = [UIColor blackColor];
+        self.pricelabel.backgroundColor = [UIColor orangeColor];
+        self.pricelabel.font = [UIFont boldSystemFontOfSize:22];
+        [self addSubview:self.pricelabel];
+        [self.pricelabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+            make.top.mas_equalTo(self.titlelabel.mas_bottom);
+            make.height.mas_equalTo(40);
+        }];
+        
         
         self.imagesGroup = [NSMutableArray arrayWithArray:@[
                             @"http://s3.mogucdn.com/mlcdn/c45406/181007_5gijd94j1c2725kghif39he2f2baj_1080x1080.jpg",
@@ -44,4 +73,18 @@
     
 }
 
+
+-(void) loadHeadViewData:(NSDictionary *)dict{
+    
+    NSString *title = dict[@"skuInfo"][@"title"];
+    NSString *priceRange = dict[@"skuInfo"][@"priceRange"];
+    NSLog(@"title == %@",title);
+    self.titlelabel.text = title;
+    self.pricelabel.text = priceRange;
+}
+
+
+-(void) dealloc{
+    
+}
 @end
